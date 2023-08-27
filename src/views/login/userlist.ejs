@@ -1,0 +1,33 @@
+<%- include('../layouts/header'); -%>
+<a href="#" class="btn btn-infor">Thông tin USER</a>
+<table class="table table-success">
+<thead class="table-primary">
+<tr>
+<th scope="col">#</th>
+<th scope="col">Email</th>
+<th scope="col">Password</th>
+<th scope="col">FullName</th>
+<th scope="col">REF</th>
+<th scope="col">Ngày Tạo</th>
+<th scope="col">Action</th>
+</tr>
+</thead>
+<tbody>
+    <% for(var i = 0; i < user_ar.length; i++) { %>
+<tr>
+<td scope="col">#</td>
+<td scope="col"><%= user_ar[i].email %></td>
+<td scope="col"><%= user_ar[i].pass %></td>
+<td scope="col"><%= user_ar[i].ten %></td>
+<td scope="col"><%= user_ar[i].ref %></td>
+<td scope="col"><%= user_ar[i].CreateAt %></td>
+<td>
+<a href="/user/edit/<%= user_ar[i]._id %>" class="btn btn-info btn-sm">
+Sửa</a>
+<a href="/user/delete/<%= user_ar[i]._id %>" onclick="return confirm('Xóa ?')" class="btn btn-secondary btn-sm">
+Xóa</a>
+</td>
+</tr>
+<% } %>
+</tbody>
+</table>

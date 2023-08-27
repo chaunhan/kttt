@@ -1,0 +1,42 @@
+<div class="content content-full">
+    <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
+        <h1 class="flex-grow-1 fs-3 fw-semibold my-2 my-sm-3">Khóa Học</h1> 
+    </div>
+    <div class="row row-deck items-push">
+        {{#each sp_ar}}
+        <div class="col-md-6 col-xl-4">
+            <a class="block block-link-shadow block-rounded text-center" href="#">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="zz block-content-full ribbon ribbon-left ">
+                    <div style="color: rgb(4, 206, 158);font-weight: bold;font-size: 1.2rem;">{{this.GiaCourse}} đ</div>
+                </div>
+                <div class="zz block-content-full">
+                    <del>{{this.GiaGoc}} đ</del>
+                </div>
+                <div class="zz block-content-full ribbon ribbon-right ribbon-danger">
+                <div class="ribbon-box">67%</div>
+                </div>
+            </div>
+            <div class="block-content block-content-full block-rounded p-0">
+                <img src="/upload/course/2023/07/05/{{this.ImgSP}}" class="img-fluid rounded-top">
+                <div class="block-content block-content-full">
+                    <div class="fw-bold prevent-downline">{{this.DesSP}}</div>
+                </div>
+            </div>
+            <div class="block-content block-content-full block-content-sm bg-body-light">
+                <div class="font-size-sm text-info">{{this.SlBai}} bài học</div>
+            </div>
+            <div class="text-warning mt-2">
+                <i class="fa fa-fw fa-star"></i>
+                <i class="fa fa-fw fa-star"></i>
+                <i class="fa fa-fw fa-star"></i>
+                <i class="fa fa-fw fa-star"></i>
+                <i class="fa fa-fw fa-star"></i>
+            </div>
+            <div class="font-size-sm text-muted pb-4">
+            </div>
+            </a>
+        </div>
+        {{/each}}
+    </div>
+</div>

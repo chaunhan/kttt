@@ -1,0 +1,32 @@
+<a href="/user/" class="btn btn-infor">Thông tin USER</a>
+<table class="table table-success">
+<thead class="table-primary">
+<tr>
+<th scope="col">#</th>
+<th scope="col">Email</th>
+<th scope="col">Password</th>
+<th scope="col">FullName</th>
+<th scope="col">REF</th>
+<th scope="col">Ngày Tạo</th>
+<th scope="col">Action</th>
+</tr>
+</thead>
+<tbody>
+{{#each user_ar}}
+<tr>
+<td scope="col">#</td>
+<td scope="col">{{this.email}}</td>
+<td scope="col">{{this.pass}}</td>
+<td scope="col">{{this.ten}}</td>
+<td scope="col">{{this.ref}}</td>
+<td scope="col">{{this.createAt}}</td>
+<td>
+<a href="/user/edit/{{this._id}}" class="btn btn-info btn-sm">
+Sửa</a>
+<a href="/user/delete/{{this._id}}" onclick="return confirm('Xóa ?')" class="btn btn-secondary btn-sm">
+Xóa</a>
+</td>
+</tr>
+{{/each}}
+</tbody>
+</table>

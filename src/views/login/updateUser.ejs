@@ -1,0 +1,26 @@
+<%- include('../layouts/header'); -%>
+<div>
+<h2>Update TK</h2>
+<form action="/user/edit/<%= user._id %>" method="POST">
+
+  <div class="mb-3">
+    <input type="hidden" name="id" value="<%= user._id %>" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">MK</label>
+    <input type="input" value="<%= user.pass %>" class="form-control" name="pass" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Email</label>
+    <input
+      type="input"
+      value="<%= user.email %>"
+      class="form-control"
+      name="email"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Update TK</button>
+  <a href="userlist" class="btn btn-infor">Xem TK</a>
+  <a href="viewUser">Hiển thi DS tk</a>
+</form>
+</div>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)https://kiemtientictok.com/vi/login/ -->
+<html lang="vi">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="origin-trial" content="Az520Inasey3TAyqLyojQa8MnmCALSEU29yQFW8dePZ7xQTvSt73pHazLFTK5f7SyLUJSo2uKLesEtEa9aUYcgMAAACPeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IkRpc2FibGVUaGlyZFBhcnR5U3RvcmFnZVBhcnRpdGlvbmluZyIsImV4cGlyeSI6MTcyNTQwNzk5OSwiaXNTdWJkb21haW4iOnRydWUsImlzVGhpcmRQYXJ0eSI6dHJ1ZX0=">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Đăng nhập</title>
+        <meta name="description" content="">
+        <link rel="shortcut icon" href="https://kiemtientictok.com/default/theme-custom/assets/media/favicons/favicon.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="https://kiemtientictok.com/default/theme-custom/assets/media/favicons/favicon-192x192.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://kiemtientictok.com/default/theme-custom/assets/media/favicons/apple-touch-icon-180x180.png">
+        <link rel="stylesheet" href="./Đăng nhập_files/select2.min.css">
+        <link rel="stylesheet" href="./Đăng nhập_files/sweetalert2.min.css">
+        <link rel="stylesheet" href="./Đăng nhập_files/magnific-popup.css">
+        <link rel="stylesheet" href="./Đăng nhập_files/flatpickr.min.css">
+        <link rel="stylesheet" href="./Đăng nhập_files/style.css">
+        <link rel="stylesheet" href="./Đăng nhập_files/cropper.min.css">
+        <link rel="stylesheet" href="./Đăng nhập_files/ion.rangeSlider.css">
+        <link rel="stylesheet" href="./Đăng nhập_files/summernote-lite.min.css">
+        <link rel="stylesheet" href="./Đăng nhập_files/slick.css">
+        <link rel="stylesheet" href="./Đăng nhập_files/slick-theme.css">
+        <link rel="stylesheet" href="./Đăng nhập_files/toastr.min.css">
+        <link rel="stylesheet" id="css-main" href="./Đăng nhập_files/dashmix.min.css">
+        <link rel="stylesheet" id="css-theme" href="./Đăng nhập_files/xeco.min.css">
+        <link rel="stylesheet" href="./Đăng nhập_files/main.css">
+        <style>
+            .toast-success {
+                background-color: #0e4ae8;
+            }
+
+            .toast-warning {
+                background-color: #f89406;
+            }
+
+            .prevent-downline {
+                word-break: normal;
+            }
+
+            .text-cart {
+                height: 71px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 3;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+            }
+
+            @media (max-width: 767px) {
+                .table>:not(caption)>*>* {
+                    padding: 0.35rem 0.35rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="page-container">
+            <main id="main-container">
+                <div class="bg-image" style="background-image:url(&#39;https://kiemtientictok.com/default/theme/assets/media/photos/photo19@2x.jpg&#39;);">
+                    <div class="row g-0 justify-content-center bg-primary-dark-op">
+                        <div class="hero-static col-sm-8 col-md-6 col-xl-4 d-flex align-items-center p-2 px-sm-0">
+                            <div class="block block-transparent block-rounded w-100 mb-0 overflow-hidden">
+                                <div class="block-content block-content-full px-lg-5 px-xl-6 py-4 py-md-5 py-lg-6 bg-body-extra-light">
+                                    <div class="mb-2 text-center">
+                                        <a class="link-fx fw-bold fs-1" href="https://kiemtientictok.com/vi/login/">
+                                            <span class="text-primary">Đăng nhập</span>
+                                        </a>
+                                        <p class="text-uppercase fw-bold fs-sm text-muted">Kiemtientictok.com</p>
+                                    </div>
+                                    <form id="main_form" action="https://kiemtientictok.com/vi/login/" method="POST">
+                                        <div class="mb-4">
+                                            <div class="input-group input-group-lg">
+                                                <input type="text" class="form-control" id="email" name="email" placeholder="Email hoặc tên tài khoản" value="" autocomplete="off">
+                                                <span class="input-group-text">
+                                                    <i class="fa fa-user-circle"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4">
+                                            <div class="input-group input-group-lg">
+                                                <input type="password" class="form-control" id="password" name="password" placeholder="Mật khẩu" autocomplete="off">
+                                                <span class="input-group-text">
+                                                    <i class="fa fa-asterisk"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="d-sm-flex justify-content-sm-between align-items-sm-center text-sm-start mb-4">
+                                            <div class="form-check d-flex gap-1 text-start">
+                                                <input type="checkbox" class="form-check-input" id="remember_me" name="remember_me" checked="">
+                                                <label class="form-check-label" for="remember_me">Duy trì đăng nhập</label>
+                                            </div>
+                                            <div class="fw-semibold fs-sm py-1 text-end">
+                                                <a href="https://kiemtientictok.com/vi/password/forgot/">Quên mật khẩu?</a>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4">
+                                            <button type="submit" class="btn w-100 btn-lg btn-hero btn-primary">
+                                                <i class="fa fa-fw fa-sign-in-alt opacity-50 me-1"></i>
+                                                Đăng nhập
+                                            </button>
+                                        </div>
+                                        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" value="03ADUVZwBtSyrs1_1P2JrOwrcjf4yDdU83Khl0c5STkxpKHBSqgmPvUJDywFJmAIF2xdY9eVHN8xsZPu1JiW-6SVzU_mkdzy4IT6c2FaYAeFR1AVYLymiOg8dzif2DeS8cVOrZd50a-wEnUWKaYxkx41iCP8Bxn6f8s37ndRUTqFqVFjIHQPkRxTetQmAeNW2U5MbB4KQ2q6dt-ObBAaU0gqup2ZUQiITQAwpf1UqKqIqIdjbsIQtO02mB_u4IQ4DSe_h6B_tykWyOy-622dalpCE2PnuxZdllR_-JD1LI-NMe7-tfo_9vt4Rri0gZajU7zUbSEFIoJN8svnmrf9rVkibsJt-X_K78ECbux5QDtRDUNy4dhLBB1vXznJFnV2IHP8kZ5xOCsTiZDv9Rb-zAVT1yYFXp6yMvPROtsrWZBGPLoXuTeLcrqisp99hrKYEeHYhX-kqsveIk3kksqyqWy5RgWOPk-ACrqhnEAwidEJg6GhA7yBGSMlYyBTagtiFpdX3Wm2wB3qjCeS_2_U1knHTTOickjoy5H8k0g5NpCm3FtysdS8od7S0oWjpf-p0uv4i4gZoOCuZ-llDdx-jx-e_s15SS7J7Dtz7uhUqNuOWbM3Ci146JMcdS06JG2yothW6YUzep1Y67BJeBgJ0ZRmHFKhoKo00kM7d7XWF7XC3Nhg98s8Iy6knOgDCKO7y6sXxbweCdWHw_urEgT41Ku_k1yp0TdPm3qkDyEXSN4oHxqi1W2Db8Nb4QoCxj_oZj8mQoX-0NWkUlUMBCWEdlVKK7HhlFg_I-MATd0R0XQi4xNCkeymyqlFZfYEoYJKpctpAV3aPhdQpQFjjf2NdSMY7Nh03HJ5_Y14SA4pDKsTXzv_x16100_FzqZQIpNitrKs-xOl7XSzz-VH6k3xvCkR5pTflBU9n4-DZVCHfmp2LIV51ewEARXHmVtqmBRltKP_rpvwqA74-iFRC3gs1YRmV9A1xgT-BQAWc0FJ4jc6asWsQ6a0FERIokCv0B5ZfIuWFLev-7hRF1asJtf57qaoWizWb8c_S9pk1T8JwqLKQWvAXUg3t88_BZNyEmyKQEEQ4vsoyovUjoX8MZRN0ywDuLoIvWbQT_2S4bS98XGkCdoYDi5VkgE5L5S3c-LeQ8kNkpx7dg0XFwOnjm013QRAO_hHvdr1JVZYz6RF_oX3_rTyGeV49Ww9tfWljyt86Xc07z7PkJSH-bCuRrKANEXkRwANBwy5U3S4vSoQ3L4crCf4WA1qeM2e5-18zagn9p3GBNXPdqYO3edgT24wRJs2JxuPWArpZDptIhfiNf7hjkPH93ujqLeztpPWivE0D09jOXb1kJ2jRy_IPCkjFSJeSRrsZtTCYBftqZH_Q56BgPBHO_R2phYE_sy7qXUH3vpZQcW-6OcLLwqdb2zWSJu9qbc-j9hj3Rnz_9dSI8UWspa6bnO2dxowK9u9So1-zFwEzZ_oh64WGG_kj8faDWwOQHNrV7ICSSuphgPuIOSo5JubTvOnh3LndBJbo085bDzIeqAZXx8lu378VKc59QC3HBvNYOaJThmA">
+                                    </form>
+                                    <style>
+                                        .grecaptcha-badge {
+                                            display: none
+                                        }
+                                    </style>
+                                    <script type="text/javascript" async="" src="./Đăng nhập_files/recaptcha__vi.js.tải xuống" crossorigin="anonymous" integrity="sha384-l7NkkrKYhZCRvby9ZE/aq55trClZVML5tGSje3y157cOlDKml8rlNExstswvSPdQ"></script>
+                                    <script src="./Đăng nhập_files/api.js.tải xuống"></script>
+                                    <script>
+                                        grecaptcha.ready(function() {
+                                            grecaptcha.execute('6LdSqrcmAAAAACV9ymoJJ6G7bNMy7w662Q_5zT_O', {
+                                                action: 'contact_support'
+                                            }).then(function(token) {
+                                                $('<input>').attr({
+                                                    type: 'hidden',
+                                                    id: 'g-recaptcha-response',
+                                                    name: 'g-recaptcha-response',
+                                                    value: token
+                                                }).appendTo('#main_form');
+                                            });
+                                        });
+                                    </script>
+                                    <p class="mb-0 d-flex flex-column-reverse flex-sm-row justify-content-sm-between">
+                                        <a class="btn btn-sm btn-alt-secondary d-block d-lg-inline-block mb-1" href="https://kiemtientictok.com/">
+                                            <i class="fa fa-fw fa-home opacity-50 me-1"></i>
+                                            Trang chính 
+                                        </a>
+                                        <a class="btn btn-sm btn-alt-secondary d-block d-lg-inline-block mb-1" href="https://kiemtientictok.com/vi/register/">
+                                            <i class="fa fa-fw fa-plus opacity-50 me-1"></i>
+                                            Đăng ký 
+                                        </a>
+                                    </p>
+                                </div>
+                                <div class="block-content bg-body">
+                                    <div class="d-flex justify-content-between align-items-center push">
+                                        <div class="dropdown">
+                                            <button type="button" class="btn btn-sm btn-alt-secondary" id="dropdown-lang" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="si si-globe me-1"></i>
+                                                Vietnamese 
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdown-lang">
+                                                <a class="dropdown-item" href="https://kiemtientictok.com/vi/login/">Vietnamese</a>
+                                            </div>
+                                        </div>
+                                        <button data-js="tawk" type="button" class="btn btn-sm btn-alt-secondary">
+                                            <i class="far fa-comment me-1"></i>
+                                            Hỗ trợ
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <script src="./Đăng nhập_files/dashmix.app.min.js.tải xuống"></script>
+        <script src="./Đăng nhập_files/jquery.min.js.tải xuống"></script>
+        <script src="./Đăng nhập_files/bootstrap-notify.min.js.tải xuống"></script>
+        <script src="./Đăng nhập_files/select2.full.min.js.tải xuống"></script>
+        <script src="./Đăng nhập_files/sweetalert2.min.js.tải xuống"></script>
+        <script src="./Đăng nhập_files/jquery.magnific-popup.min.js.tải xuống"></script>
+        <script src="./Đăng nhập_files/flatpickr.min.js.tải xuống"></script>
+        <script src="./Đăng nhập_files/index.js.tải xuống"></script>
+        <script src="./Đăng nhập_files/clipboard.min.js.tải xuống"></script>
+        <script src="./Đăng nhập_files/autosize.min.js.tải xuống"></script>
+        <script src="./Đăng nhập_files/bootstrap-maxlength.min.js.tải xuống"></script>
+        <script src="./Đăng nhập_files/ion.rangeSlider.min.js.tải xuống"></script>
+        <script src="./Đăng nhập_files/summernote-lite.min.js.tải xuống"></script>
+        <script src="./Đăng nhập_files/cleave.min.js.tải xuống"></script>
+        <script src="./Đăng nhập_files/moment.min.js.tải xuống"></script>
+        <script src="./Đăng nhập_files/moment-duration-format.min.js.tải xuống" integrity="sha512-ej3mVbjyGQoZGS3JkES4ewdpjD8UBxHRGW+MN5j7lg3aGQ0k170sFCj5QJVCFghZRCio7DEmyi+8/HAwmwWWiA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="./Đăng nhập_files/jquery.easypiechart.min.js.tải xuống"></script>
+        <script src="./Đăng nhập_files/slick.min.js.tải xuống"></script>
+        <script>
+            Dashmix.helpersOnLoad(['jq-slick']);
+        </script>
+        <script>
+            Dashmix.helpersOnLoad(['jq-select2', 'jq-magnific-popup', 'jq-maxlength', 'jq-rangeslider', 'js-flatpickr', 'jq-easy-pie-chart']);
+        </script>
+        <script src="./Đăng nhập_files/main.js.tải xuống"></script>
+        <div class="modal fade" id="modal_cropper" tabindex="-1" role="dialog" aria-labelledby="modal-block-popout" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-top modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="block block-themed block-transparent mb-0">
+                        <div class="block-header bg-primary-dark">
+                            <h3 class="block-title">Cài đặt hình ảnh</h3>
+                            <div class="block-options">
+                                <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
+                                    <i class="fa fa-fw fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="block-content" style="padding-bottom: 1.25rem;">
+                            <img id="modal_cropper_img" data-width="500" data-height="500" data-lang="" class="img-fluid mx-auto" src="./Đăng nhập_files/favicon.png">
+                        </div>
+                        <div class="block-content block-content-full text-end bg-light">
+                            <button type="button" class="btn btn-sm btn-dark" data-bs-dismiss="modal">Đóng</button>
+                            <button type="button" id="crop_now" class="btn btn-sm btn-primary">Xong</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="page-loader"></div>
+        <script src="./Đăng nhập_files/cropper.min.js.tải xuống"></script>
+        <script>
+            $('#modal_cropper').on('shown.bs.modal', function() {
+                var img = $('#modal_cropper_img');
+                img.cropper('destroy');
+                img.cropper({
+                    aspectRatio: img.data('width') / img.data('height'),
+                    responsive: true,
+                    center: true,
+                    cropBoxResizable: false,
+                    viewMode: 0,
+                    dragMode: 'move',
+                    zoomable: true,
+                    minCropBoxWidth: img.data('width'),
+                    minCropBoxHeight: img.data('height')
+                });
+            });
+            $('#crop_now').on('click', function() {
+                $('#page-loader').addClass('show');
+                var img = $('#modal_cropper_img');
+                var src = img.attr('src');
+                var index = src.lastIndexOf("/") + 1;
+                var filename = src.substr(index);
+                var lang = img.data('lang');
+                var name = img.data('name');
+                var canvas = img.cropper('getCroppedCanvas');
+                var ajax_cropped_img = canvas.toDataURL();
+                $.post('/vi/ajax/cropper/', {
+                    'ajax_crop_img': src,
+                    'ajax_cropped_img': ajax_cropped_img,
+                    'width': img.data('width'),
+                    'height': img.data('height')
+                }, function(data) {
+                    if (!data) {
+                        alert('Có lỗi, vui lòng tải lại trang và thử lại');
+                    } else {
+                        $('.thumbnail_zoom[data-name="' + name + '"][data-lang="' + lang + '"]').removeClass('d-none');
+                        $('.ajax_cropper_img[data-name="' + name + '"][data-lang="' + lang + '"]').attr('src', data);
+                        $('.thumbnail_zoom[data-name="' + name + '"][data-lang="' + lang + '"]').attr('href', data);
+                        if ($('input[name="' + name + '"][data-lang="' + lang + '"]').length > 0 && lang == '') {
+                            $('input[name="' + name + '"][data-lang="' + lang + '"]').val(data);
+                        } else if ($('input[name="' + name + '[' + lang + ']"]').length > 0 && lang != '') {
+                            $('input[name="' + name + '[' + lang + ']"]').val(data);
+                        }
+                        $('#modal_cropper').modal('hide');
+                    }
+                    $('#page-loader').removeClass('show');
+                });
+            });
+        </script>
+        <script>
+            const popName = document.getElementById("pop_name");
+            const popCt = document.getElementById("pop_ct");
+            const popTime = document.getElementById("pop_time");
+            const popImg = document.getElementById("pop_img");
+            var auto_refresh2 = setInterval(function() {
+                showDK();
+                var t = randomDK();
+                var name_array = ['Huỳnh Nguyên', 'Nguyễn Oanh', 'Tuyết Dương', 'Tươi Vũ', 'Trang Trịnh', 'Phượng Liễu', 'Trang Linh', 'Trang Trần', 'Trang Quỳnh', 'Trang Bùi', 'Trần Thúy', 'Trần Thảo', 'Trần Mai', 'Ánh Trần', 'Đặng Hằng', 'Hằng Nga', 'Hoa Lê', 'Hoa Trương', 'Kim Thơ', 'Lê Mai', 'Mai Nguyễn', 'Nguyễn Hoa', 'Oanh Lê', 'Quỳnh Nhu', 'Thu Hoàng', 'Thủy Tiên', 'Ánh Tuyến', 'Diễm Quỳnh', 'Hằng Nguyễn', 'Hoa Ngân', 'Huệ Em', 'Kin Xuyến', 'Lệ Quyên', 'Mai Tình', 'Thanh Hằng', 'Thùy Anh', 'Tiêu Phụng', 'Băng Băng', 'Dung Bùi', 'Hân Hân', 'Hoàng Anh', 'Hương Diệu', 'Lâm Phạm', 'Lệ Thu', 'Minh Huệ', 'Nguyễn Thu', 'Phương Trần', 'Thùy Dương', 'Tố Uyên', 'Trần Hảo', 'Anh Hoa', 'Bee Hoa', 'Giang Hoa', 'Hoa Hằng', 'Hoàng Hương', 'Hương Giang', 'Lanh Anh', 'Liên Phạm', 'Mộng Tuyền', 'Nhất Nhất', 'Phú Thoa', 'Thanh Thu', 'Thúy Hà', 'Bùi Nguyệt', 'Giang Nhi', 'Hoài Nguyễn', 'Hoa Phạm', 'Hương Ly', 'Lan Hương', 'Loan Nguyễn', 'Nga Trương', 'Nhung Hoàng', 'Quyên Đỗ', 'Thoa Nguyễn', 'Thúy Hương', 'Chuyên Yến', 'Hằng Anna', 'Hoài Trang', 'Hoa Trang', 'Kiều Oanh', 'Lan Xuân', 'Ly Ly', 'Ngọc Ánh', 'Quỳnh Hoa', 'Thu Hiền', 'Thúy Nguyễn'];
+                var pic_array = ['huynh-nguyen', 'nguyen-oanh', 'tuyet-duong', 'tuoi-vu', 'trang-trinh', 'phuong-lieu', 'trang-linh', 'trang-tran', 'trang-quynh', 'trang-bui', 'tran-thuy', 'tran-thao', 'tran-mai', 'anh-tran', 'dang-hang', 'hang-nga', 'hoa-le', 'hoa-truong', 'kim-tho', 'le-mai', 'mai-nguyen', 'nguyen-hoa', 'oanh-le', 'quynh-nhu', 'thu-hoang', 'thuy-tien', 'anh-tuyen', 'diem-quynh', 'hang-nguyen', 'hoa-ngan', 'hue-em', 'kin-xuyen', 'le-quyen', 'mai-tinh', 'thanh-hang', 'thuy-anh', 'tieu-phung', 'bang-bang', 'dung-bui', 'han-han', 'hoang-anh', 'huong-dieu', 'lam-pham', 'le-thu', 'minh-hue', 'nguyen-thu', 'phuong-tran', 'thuy-duong', 'to-uyen', 'tran-hao', 'anh-hoa', 'bee-hoa', 'giang-hoa', 'hoa-hang', 'hoang-huong', 'huong-giang', 'lan-anh', 'lien-pham', 'mong-tuyen', 'nhat-nhat', 'phu-thoa', 'thanh-thu', 'thuy-ha', 'bui-nguyet', 'giang-nhi', 'hoai-nguyen', 'hoa-pham', 'huong-ly', 'lan-huong', 'loan-nguyen', 'nga-truong', 'nhung-hoang', 'quyen-do', 'thoa-nguyen', 'thuy-huong', 'chuyen-yen', 'hang-anna', 'hoai-trang', 'hoa-trang', 'kieu-oanh', 'lan-xuan', 'ly-ly', 'ngoc-anh', 'quynh-hoa', 'thu-hien', 'thuy-nguyen'];
+                var t1 = name_array[t];
+                var t2 = pic_array[t];
+                popName.innerHTML = t1;
+                var t2 = 'https://kiemtientictok.com/default/theme/assets/media/customer_popup/' + t2 + '.jpg';
+                popImg.setAttribute("src", t2);
+                popImg.setAttribute("alt", t1);
+                var ct = randomDK1();
+                popCt.innerHTML = ct;
+                var p = randomDK2();
+                popTime.innerHTML = p;
+            }, 4000);
+            var customReg = document.getElementById("popup_person_1_0_0");
+            function showDK() {
+                customReg.style.opacity = customReg.style.opacity == "1" ? "0" : "1";
+            }
+            function randomDK() {
+                var t = Math.floor(Math.random() * 86);
+                return t;
+                console.log(t);
+            }
+            function randomDK1() {
+                const random = arr=>arr[Math.floor(Math.random() * arr.length)];
+                var ct = random(['Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khóa học bán hàng trang cá nhân', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khóa học XYZ', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khóa học thuật toán tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khóa học sáng tạo nội dung trên tiktok', 'Đã đăng ký xoá khóa học tiền điện tử', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khóa học đầu tư ngoại hối', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok', 'Đã đăng ký khoá học kiếm tiền từ tiếp thị liên kết trên nền tảng Tiktok']);
+                return ct;
+            }
+            function randomDK2() {
+                const random = arr=>arr[Math.floor(Math.random() * arr.length)];
+                var p = random(['5 phút trước', '6 phút trước', '7 phút trước', '8 phút trước', '9 phút trước', '12 phút trước', '14 phút trước', '15 phút trước', '16 phút trước', '17 phút trước', '18 phút trước', '19 phút trước', '20 phút trước', ]);
+                return p;
+            }
+        </script>
+        <script src="./Đăng nhập_files/toastr.min.js.tải xuống"></script>
+        <script>
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+            $(function() {
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": false,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": true,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                };
+                $('.add_cart').click(function() {
+                    var id = $(this).data('course');
+                    $.post('/vi/cart/ajax/', {
+                        type: 'add_cart',
+                        course: id
+                    }, function(rs) {
+                        if (rs.status == 1) {
+                            if ($('.cart-detail').find('.empty_cart').length != 0) {
+                                $('.cart-detail').html(rs.content);
+                            } else {
+                                $('.cart-detail').append(rs.content);
+                            }
+                            $('.qty_cart').html(rs.message);
+                            $('.bi').addClass('show');
+                            Command: toastr["success"]('Thêm vào giỏ hàng thành công!');
+                            scrollToTop();
+                        }
+                    });
+                });
+                $('.buy_now').click(function() {
+                    var id = $(this).data('course');
+                    $.post('/vi/buy/ajax/', {
+                        type: 'buy_now',
+                        course: id
+                    }, function(rs) {
+                        if (rs.status == 1) {
+                            if ($('.cart-detail').find('.empty_cart').length != 0) {
+                                $('.cart-detail').html(rs.content);
+                            } else {
+                                $('.cart-detail').append(rs.content);
+                            }
+                            $('.qty_cart').html(rs.message);
+                            $('.bi').addClass('show');
+                            Command: toastr["success"]('Thêm vào giỏ hàng thành công!');
+                            window.location.href = '/vi/cart/';
+                            scrollToTop();
+                        }
+                    });
+                });
+            });
+            $(function() {
+                $('.remove_cart').click(function() {
+                    var self = this;
+                    var id = $(this).data('id');
+                    $.post('/vi/cart/ajax/delete/', {
+                        'remove': id
+                    }, function(rs) {
+                        if ($('.cart_item').find('tr').length != 1) {
+                            $(self).parents('tr').remove();
+                        } else {
+                            $('.cart_item').html('<tr class="table-danger"><td colspan="3" class="text-danger font-w700 text-center">Chưa có khóa học nào</td></tr>');
+                        }
+                        $('.cart_total').html(rs);
+                        Command: toastr["warning"]('Xóa khóa học thành công');
+                        location.reload();
+                    });
+                });
+            });
+        </script>
+        <script>
+            const buttons = document.querySelectorAll('.login_buy');
+            buttons.forEach(button=>{
+                button.addEventListener('click', ()=>{
+                    toastr["error"]("Bạn phải đăng nhập để mua khóa học");
+                }
+                );
+            }
+            );
+        </script>
+        <div>
+            <div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; position: fixed; visibility: hidden; display: block; transition: right 0.3s ease 0s; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;">
+                <div class="grecaptcha-logo">
+                    <iframe title="reCAPTCHA" src="./Đăng nhập_files/anchor.html" width="256" height="60" role="presentation" name="a-397jodqd89rb" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
+                </div>
+                <div class="grecaptcha-error"></div>
+                <textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+            </div>
+            <iframe style="display: none;" src="./Đăng nhập_files/saved_resource.html"></iframe>
+        </div>
+    </body>
+</html>
