@@ -25,9 +25,18 @@ const userlist = async (req, res) => {
     });
 }
 
+const index = async (req, res) => {
+    cmodel.find({}).then((sp_ar) => {
+        res.render('./index/index.ejs' , {
+            sp_ar : sp_ar.map(s=>s.toJSON()),
+        })
+    });
+}
+
 
 module.exports = {
     admin,
     home,
-    userlist
+    userlist,
+    index
 }

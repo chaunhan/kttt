@@ -6,4 +6,5 @@ const router = express.Router();
 router.get('/home', authMiddleware.loggedin, controllers.home)
 router.get('/admin', controllers.admin)
 router.get('/userlist', controllers.userlist)
+router.get('/', controllers.index)
 module.exports = router;
