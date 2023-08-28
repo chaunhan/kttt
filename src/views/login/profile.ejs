@@ -1,0 +1,359 @@
+
+<%- include('../layouts/headerlogin'); -%>
+<main id="main-container">
+
+<!--! form -->
+<form method="post" action="/updateprofile" id="form-profile">
+    <div class="bg-image bg-gd-lake">
+    <div class="bg-black-25">
+    <div class="content content-full">
+        <div class="py-5 text-center">
+            <!--! avatar -->
+            <div class="js-gallery js-gallery-enabled">
+                <div class="d-flex justify-content-center">
+                    <div class="mr-3 ml-2 position-relative">
+                        <img class="img-link-zoom-in img-avatar img-avatar96 img-avatar-thumb ajax_cropper_img" data-lang="" data-name="avatar" src="/default/theme/assets/media/avatars/avatar10.jpg" alt="">
+                        <label for="cropper_avatar" role="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tải lên một tấm ảnh" class="js-bs-tooltip-enabled"><i class="fa fa-camera position-absolute bottom-0 end-0 bg-gray rounded-circle p-2"></i></label>
+                    </div>
+                </div>
+                <!-- <input class="form-control d-none ajax_cropper" data-lang="" data-name="avatar" data-width="1024" data-height="1024" type="file" id="cropper_avatar"> -->
+                                    </div>
+
+            <!--! full_name -->
+            <h1 class="h3 fw-bold my-2 text-white"><%= user.ten %></h1>
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-8 col-sm-9">
+                    <div class="input-group mt-3 copyClipboard">
+                        <input type="text" readonly="" class="form-control" value="https://kiemtientictok.com/vi/referral/5291/">
+                        <div class="input-group-append">
+                            <button class="btn btn-success copyClipboard" data-clipboard-text="https://kiemtientictok.com/vi/referral/5291/" style="border-top-right-radius: 5px;border-bottom-right-radius: 5px" type="button"><i class="fa fa-copy"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="content content-full bg-body-extra-light">
+    <div class="row">
+    <!--! id -->
+    <div class="col-md-4 mb-4">
+        <label class="form-label text-muted"><i class="si si-credit-card me-1"></i>ID</label>
+        <input type="text" class="form-control" name="_id" value="<%= user._id %>" disabled="">
+    </div>
+
+    <!--! username -->
+    <div class="col-md-4 mb-4">
+        <label class="form-label text-muted" for="username"><i class="si si-badge me-1"></i>Tên tài khoản</label>
+        <input type="text" class="form-control" value="" disabled="">
+    </div>
+
+    <!--! full_name -->
+    <div class="col-md-4 mb-4">
+        <label class="form-label text-muted" for="full_name"><i class="si si-check me-1"></i>Họ tên</label>
+        <input type="text" class="form-control" id="full_name" name="ten" value="<%= user.ten %>" autocomplete="off">
+                    </div>
+
+    <!--! email -->
+    <div class="col-md-4 mb-4">
+        <label class="form-label text-muted"><i class="si si-envelope me-1"></i>Email</label>
+        <input type="text" class="form-control" value="<%= user.email %>" disabled="">
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <label class="form-label text-muted" for="phone"><i class="si si-screen-smartphone me-1"></i>Điện thoại</label>
+        <div class="input-group">
+            <!--! country -->
+            <div style="width:100px">
+                <select class="js_selected_short form-select rounded-start border-end-0 rounded-0" id="country" name="country">
+                                                                                    <option value="AF" data-short="+93" data-full="+93 Afghanistan">+93</option>
+                                                                                    <option value="AL" data-short="+355" data-full="+355 Albania">+355</option>
+                                                                                    <option value="DZ" data-short="+213" data-full="+213 Algeria">+213</option>
+                                                                                    <option value="AS" data-short="+1684" data-full="+1684 American Samoa">+1684</option>
+                                                                                    <option value="AD" data-short="+376" data-full="+376 Andorra">+376</option>
+                                                                                    <option value="AO" data-short="+244" data-full="+244 Angola">+244</option>
+                                                                                    <option value="AI" data-short="+1264" data-full="+1264 Anguilla">+1264</option>
+                                                                                    <option value="AQ" data-short="+672" data-full="+672 Antarctica">+672</option>
+                                                                                    <option value="AG" data-short="+1268" data-full="+1268 Antigua and Barbuda">+1268</option>
+                                                                                    <option value="AR" data-short="+54" data-full="+54 Argentina">+54</option>
+                                                                                    <option value="AM" data-short="+374" data-full="+374 Armenia">+374</option>
+                                                                                    <option value="AW" data-short="+297" data-full="+297 Aruba">+297</option>
+                                                                                    <option value="AU" data-short="+61" data-full="+61 Australia">+61</option>
+                                                                                    <option value="AT" data-short="+43" data-full="+43 Austria">+43</option>
+                                                                                    <option value="AZ" data-short="+994" data-full="+994 Azerbaijan">+994</option>
+                                                                                    <option value="BS" data-short="+1242" data-full="+1242 Bahamas">+1242</option>
+                                                                                    <option value="BH" data-short="+973" data-full="+973 Bahrain">+973</option>
+                                                                                    <option value="BD" data-short="+880" data-full="+880 Bangladesh">+880</option>
+                                                                                    <option value="BB" data-short="+1246" data-full="+1246 Barbados">+1246</option>
+                                                                                    <option value="BY" data-short="+375" data-full="+375 Belarus">+375</option>
+                                                                                    <option value="BE" data-short="+32" data-full="+32 Belgium">+32</option>
+                                                                                    <option value="BZ" data-short="+501" data-full="+501 Belize">+501</option>
+                                                                                    <option value="BJ" data-short="+229" data-full="+229 Benin">+229</option>
+                                                                                    <option value="BM" data-short="+1441" data-full="+1441 Bermuda">+1441</option>
+                                                                                    <option value="BT" data-short="+975" data-full="+975 Bhutan">+975</option>
+                                                                                    <option value="BO" data-short="+591" data-full="+591 Bolivia">+591</option>
+                                                                                    <option value="BA" data-short="+387" data-full="+387 Bosnia and Herzegovina">+387</option>
+                                                                                    <option value="BW" data-short="+267" data-full="+267 Botswana">+267</option>
+                                                                                    <option value="BV" data-short="+55" data-full="+55 Bouvet Island">+55</option>
+                                                                                    <option value="BR" data-short="+55" data-full="+55 Brazil">+55</option>
+                                                                                    <option value="IO" data-short="+246" data-full="+246 British Indian Ocean Territory">+246</option>
+                                                                                    <option value="BN" data-short="+673" data-full="+673 Brunei">+673</option>
+                                                                                    <option value="BG" data-short="+359" data-full="+359 Bulgaria">+359</option>
+                                                                                    <option value="BF" data-short="+226" data-full="+226 Burkina Faso">+226</option>
+                                                                                    <option value="BI" data-short="+257" data-full="+257 Burundi">+257</option>
+                                                                                    <option value="KH" data-short="+855" data-full="+855 Cambodia">+855</option>
+                                                                                    <option value="CM" data-short="+237" data-full="+237 Cameroon">+237</option>
+                                                                                    <option value="CA" data-short="+1" data-full="+1 Canada">+1</option>
+                                                                                    <option value="CV" data-short="+238" data-full="+238 Cape Verde">+238</option>
+                                                                                    <option value="KY" data-short="+1345" data-full="+1345 Cayman Islands">+1345</option>
+                                                                                    <option value="CF" data-short="+236" data-full="+236 Central African Republic">+236</option>
+                                                                                    <option value="TD" data-short="+235" data-full="+235 Chad">+235</option>
+                                                                                    <option value="CL" data-short="+56" data-full="+56 Chile">+56</option>
+                                                                                    <option value="CN" data-short="+86" data-full="+86 China">+86</option>
+                                                                                    <option value="CX" data-short="+61" data-full="+61 Christmas Island">+61</option>
+                                                                                    <option value="CC" data-short="+61" data-full="+61 Cocos (Keeling) Islands">+61</option>
+                                                                                    <option value="CO" data-short="+57" data-full="+57 Colombia">+57</option>
+                                                                                    <option value="KM" data-short="+269" data-full="+269 Comoros">+269</option>
+                                                                                    <option value="CG" data-short="+242" data-full="+242 Congo">+242</option>
+                                                                                    <option value="CK" data-short="+682" data-full="+682 Cook Islands">+682</option>
+                                                                                    <option value="CR" data-short="+506" data-full="+506 Costa Rica">+506</option>
+                                                                                    <option value="HR" data-short="+385" data-full="+385 Croatia">+385</option>
+                                                                                    <option value="CU" data-short="+53" data-full="+53 Cuba">+53</option>
+                                                                                    <option value="CY" data-short="+357" data-full="+357 Cyprus">+357</option>
+                                                                                    <option value="CZ" data-short="+420" data-full="+420 Czech Republic">+420</option>
+                                                                                    <option value="DK" data-short="+45" data-full="+45 Denmark">+45</option>
+                                                                                    <option value="DJ" data-short="+253" data-full="+253 Djibouti">+253</option>
+                                                                                    <option value="DM" data-short="+1767" data-full="+1767 Dominica">+1767</option>
+                                                                                    <option value="DO" data-short="+1849" data-full="+1849 Dominican Republic">+1849</option>
+                                                                                    <option value="TP" data-short="+670" data-full="+670 East Timor">+670</option>
+                                                                                    <option value="EC" data-short="+593" data-full="+593 Ecuador">+593</option>
+                                                                                    <option value="EG" data-short="+20" data-full="+20 Egypt">+20</option>
+                                                                                    <option value="SV" data-short="+503" data-full="+503 El Salvador">+503</option>
+                                                                                    <option value="GQ" data-short="+240" data-full="+240 Equatorial Guinea">+240</option>
+                                                                                    <option value="ER" data-short="+291" data-full="+291 Eritrea">+291</option>
+                                                                                    <option value="EE" data-short="+372" data-full="+372 Estonia">+372</option>
+                                                                                    <option value="ET" data-short="+251" data-full="+251 Ethiopia">+251</option>
+                                                                                    <option value="FK" data-short="+500" data-full="+500 Falkland Islands">+500</option>
+                                                                                    <option value="FO" data-short="+298" data-full="+298 Faroe Islands">+298</option>
+                                                                                    <option value="FJ" data-short="+679" data-full="+679 Fiji Islands">+679</option>
+                                                                                    <option value="FI" data-short="+358" data-full="+358 Finland">+358</option>
+                                                                                    <option value="FR" data-short="+33" data-full="+33 France">+33</option>
+                                                                                    <option value="GF" data-short="+594" data-full="+594 French Guiana">+594</option>
+                                                                                    <option value="PF" data-short="+689" data-full="+689 French Polynesia">+689</option>
+                                                                                    <option value="TF" data-short="+262" data-full="+262 French Southern territories">+262</option>
+                                                                                    <option value="GA" data-short="+241" data-full="+241 Gabon">+241</option>
+                                                                                    <option value="GM" data-short="+220" data-full="+220 Gambia">+220</option>
+                                                                                    <option value="GE" data-short="+995" data-full="+995 Georgia">+995</option>
+                                                                                    <option value="DE" data-short="+49" data-full="+49 Germany">+49</option>
+                                                                                    <option value="GH" data-short="+233" data-full="+233 Ghana">+233</option>
+                                                                                    <option value="GI" data-short="+350" data-full="+350 Gibraltar">+350</option>
+                                                                                    <option value="GR" data-short="+30" data-full="+30 Greece">+30</option>
+                                                                                    <option value="GL" data-short="+299" data-full="+299 Greenland">+299</option>
+                                                                                    <option value="GD" data-short="+1473" data-full="+1473 Grenada">+1473</option>
+                                                                                    <option value="GP" data-short="+590" data-full="+590 Guadeloupe">+590</option>
+                                                                                    <option value="GU" data-short="+1671" data-full="+1671 Guam">+1671</option>
+                                                                                    <option value="GT" data-short="+502" data-full="+502 Guatemala">+502</option>
+                                                                                                                    <option value="GN" data-short="+224" data-full="+224 Guinea">+224</option>
+                                                                                    <option value="GW" data-short="+245" data-full="+245 Guinea-Bissau">+245</option>
+                                                                                    <option value="GY" data-short="+592" data-full="+592 Guyana">+592</option>
+                                                                                    <option value="HT" data-short="+509" data-full="+509 Haiti">+509</option>
+                                                                                    <option value="HM" data-short="+672" data-full="+672 Heard Island and McDonald Islands">+672</option>
+                                                                                    <option value="VA" data-short="+379" data-full="+379 Holy See (Vatican City State)">+379</option>
+                                                                                    <option value="HN" data-short="+504" data-full="+504 Honduras">+504</option>
+                                                                                    <option value="HK" data-short="+852" data-full="+852 Hong Kong">+852</option>
+                                                                                    <option value="HU" data-short="+36" data-full="+36 Hungary">+36</option>
+                                                                                    <option value="IS" data-short="+354" data-full="+354 Iceland">+354</option>
+                                                                                    <option value="IN" data-short="+91" data-full="+91 India">+91</option>
+                                                                                    <option value="ID" data-short="+62" data-full="+62 Indonesia">+62</option>
+                                                                                    <option value="IR" data-short="+98" data-full="+98 Iran">+98</option>
+                                                                                    <option value="IQ" data-short="+964" data-full="+964 Iraq">+964</option>
+                                                                                    <option value="IE" data-short="+353" data-full="+353 Ireland">+353</option>
+                                                                                                                    <option value="IL" data-short="+972" data-full="+972 Israel">+972</option>
+                                                                                    <option value="IT" data-short="+39" data-full="+39 Italy">+39</option>
+                                                                                    <option value="CI" data-short="+225" data-full="+225 Ivory Coast">+225</option>
+                                                                                    <option value="JM" data-short="+1876" data-full="+1876 Jamaica">+1876</option>
+                                                                                    <option value="JP" data-short="+81" data-full="+81 Japan">+81</option>
+                                                                                                                    <option value="JO" data-short="+962" data-full="+962 Jordan">+962</option>
+                                                                                    <option value="KZ" data-short="+7" data-full="+7 Kazakhstan">+7</option>
+                                                                                    <option value="KE" data-short="+254" data-full="+254 Kenya">+254</option>
+                                                                                    <option value="KI" data-short="+686" data-full="+686 Kiribati">+686</option>
+                                                                                    <option value="KW" data-short="+965" data-full="+965 Kuwait">+965</option>
+                                                                                    <option value="KG" data-short="+996" data-full="+996 Kyrgyzstan">+996</option>
+                                                                                    <option value="LA" data-short="+856" data-full="+856 Laos">+856</option>
+                                                                                    <option value="LV" data-short="+371" data-full="+371 Latvia">+371</option>
+                                                                                    <option value="LB" data-short="+961" data-full="+961 Lebanon">+961</option>
+                                                                                    <option value="LS" data-short="+266" data-full="+266 Lesotho">+266</option>
+                                                                                    <option value="LR" data-short="+231" data-full="+231 Liberia">+231</option>
+                                                                                    <option value="LY" data-short="+218" data-full="+218 Libyan Arab Jamahiriya">+218</option>
+                                                                                    <option value="LI" data-short="+423" data-full="+423 Liechtenstein">+423</option>
+                                                                                    <option value="LT" data-short="+370" data-full="+370 Lithuania">+370</option>
+                                                                                    <option value="LU" data-short="+352" data-full="+352 Luxembourg">+352</option>
+                                                                                    <option value="MO" data-short="+853" data-full="+853 Macao">+853</option>
+                                                                                    <option value="MK" data-short="+389" data-full="+389 North Macedonia">+389</option>
+                                                                                    <option value="MG" data-short="+261" data-full="+261 Madagascar">+261</option>
+                                                                                    <option value="MW" data-short="+265" data-full="+265 Malawi">+265</option>
+                                                                                    <option value="MY" data-short="+60" data-full="+60 Malaysia">+60</option>
+                                                                                    <option value="MV" data-short="+960" data-full="+960 Maldives">+960</option>
+                                                                                    <option value="ML" data-short="+223" data-full="+223 Mali">+223</option>
+                                                                                    <option value="MT" data-short="+356" data-full="+356 Malta">+356</option>
+                                                                                    <option value="MH" data-short="+692" data-full="+692 Marshall Islands">+692</option>
+                                                                                    <option value="MQ" data-short="+596" data-full="+596 Martinique">+596</option>
+                                                                                    <option value="MR" data-short="+222" data-full="+222 Mauritania">+222</option>
+                                                                                    <option value="MU" data-short="+230" data-full="+230 Mauritius">+230</option>
+                                                                                    <option value="YT" data-short="+262" data-full="+262 Mayotte">+262</option>
+                                                                                    <option value="MX" data-short="+52" data-full="+52 Mexico">+52</option>
+                                                                                    <option value="FM" data-short="+691" data-full="+691 Micronesia, Federated States of">+691</option>
+                                                                                    <option value="MD" data-short="+373" data-full="+373 Moldova">+373</option>
+                                                                                    <option value="MC" data-short="+377" data-full="+377 Monaco">+377</option>
+                                                                                    <option value="MN" data-short="+976" data-full="+976 Mongolia">+976</option>
+                                                                                                                    <option value="MS" data-short="+1664" data-full="+1664 Montserrat">+1664</option>
+                                                                                    <option value="MA" data-short="+212" data-full="+212 Morocco">+212</option>
+                                                                                    <option value="MZ" data-short="+258" data-full="+258 Mozambique">+258</option>
+                                                                                    <option value="MM" data-short="+95" data-full="+95 Myanmar">+95</option>
+                                                                                    <option value="NA" data-short="+264" data-full="+264 Namibia">+264</option>
+                                                                                    <option value="NR" data-short="+674" data-full="+674 Nauru">+674</option>
+                                                                                    <option value="NP" data-short="+977" data-full="+977 Nepal">+977</option>
+                                                                                    <option value="NL" data-short="+31" data-full="+31 Netherlands">+31</option>
+                                                                                    <option value="AN" data-short="+599" data-full="+599 Netherlands Antilles">+599</option>
+                                                                                    <option value="NC" data-short="+687" data-full="+687 New Caledonia">+687</option>
+                                                                                    <option value="NZ" data-short="+64" data-full="+64 New Zealand">+64</option>
+                                                                                    <option value="NI" data-short="+505" data-full="+505 Nicaragua">+505</option>
+                                                                                    <option value="NE" data-short="+227" data-full="+227 Niger">+227</option>
+                                                                                    <option value="NG" data-short="+234" data-full="+234 Nigeria">+234</option>
+                                                                                    <option value="NU" data-short="+683" data-full="+683 Niue">+683</option>
+                                                                                    <option value="NF" data-short="+672" data-full="+672 Norfolk Island">+672</option>
+                                                                                    <option value="KP" data-short="+850" data-full="+850 North Korea">+850</option>
+                                                                                    <option value="GB" data-short="+44" data-full="+44 Northern Ireland">+44</option>
+                                                                                    <option value="MP" data-short="+1670" data-full="+1670 Northern Mariana Islands">+1670</option>
+                                                                                    <option value="NO" data-short="+47" data-full="+47 Norway">+47</option>
+                                                                                    <option value="OM" data-short="+968" data-full="+968 Oman">+968</option>
+                                                                                    <option value="PK" data-short="+92" data-full="+92 Pakistan">+92</option>
+                                                                                    <option value="PW" data-short="+680" data-full="+680 Palau">+680</option>
+                                                                                    <option value="PS" data-short="+970" data-full="+970 Palestine">+970</option>
+                                                                                    <option value="PA" data-short="+507" data-full="+507 Panama">+507</option>
+                                                                                    <option value="PG" data-short="+675" data-full="+675 Papua New Guinea">+675</option>
+                                                                                    <option value="PY" data-short="+595" data-full="+595 Paraguay">+595</option>
+                                                                                    <option value="PE" data-short="+51" data-full="+51 Peru">+51</option>
+                                                                                    <option value="PH" data-short="+63" data-full="+63 Philippines">+63</option>
+                                                                                    <option value="PN" data-short="+64" data-full="+64 Pitcairn">+64</option>
+                                                                                    <option value="PL" data-short="+48" data-full="+48 Poland">+48</option>
+                                                                                    <option value="PT" data-short="+351" data-full="+351 Portugal">+351</option>
+                                                                                    <option value="PR" data-short="+1939" data-full="+1939 Puerto Rico">+1939</option>
+                                                                                    <option value="QA" data-short="+974" data-full="+974 Qatar">+974</option>
+                                                                                    <option value="RE" data-short="+262" data-full="+262 Reunion">+262</option>
+                                                                                    <option value="RO" data-short="+40" data-full="+40 Romania">+40</option>
+                                                                                    <option value="RU" data-short="+7" data-full="+7 Russian Federation">+7</option>
+                                                                                    <option value="RW" data-short="+250" data-full="+250 Rwanda">+250</option>
+                                                                                    <option value="SH" data-short="+290" data-full="+290 Saint Helena">+290</option>
+                                                                                    <option value="KN" data-short="+1869" data-full="+1869 Saint Kitts and Nevis">+1869</option>
+                                                                                    <option value="LC" data-short="+1758" data-full="+1758 Saint Lucia">+1758</option>
+                                                                                    <option value="PM" data-short="+508" data-full="+508 Saint Pierre and Miquelon">+508</option>
+                                                                                    <option value="VC" data-short="+1784" data-full="+1784 Saint Vincent and the Grenadines">+1784</option>
+                                                                                    <option value="WS" data-short="+685" data-full="+685 Samoa">+685</option>
+                                                                                    <option value="SM" data-short="+378" data-full="+378 San Marino">+378</option>
+                                                                                    <option value="ST" data-short="+239" data-full="+239 Sao Tome and Principe">+239</option>
+                                                                                    <option value="SA" data-short="+966" data-full="+966 Saudi Arabia">+966</option>
+                                                                                    <option value="SN" data-short="+221" data-full="+221 Senegal">+221</option>
+                                                                                    <option value="RS" data-short="+381" data-full="+381 Serbia">+381</option>
+                                                                                    <option value="SC" data-short="+248" data-full="+248 Seychelles">+248</option>
+                                                                                    <option value="SL" data-short="+232" data-full="+232 Sierra Leone">+232</option>
+                                                                                    <option value="SG" data-short="+65" data-full="+65 Singapore">+65</option>
+                                                                                    <option value="SK" data-short="+421" data-full="+421 Slovakia">+421</option>
+                                                                                    <option value="SI" data-short="+386" data-full="+386 Slovenia">+386</option>
+                                                                                    <option value="SB" data-short="+677" data-full="+677 Solomon Islands">+677</option>
+                                                                                    <option value="SO" data-short="+252" data-full="+252 Somalia">+252</option>
+                                                                                    <option value="ZA" data-short="+27" data-full="+27 South Africa">+27</option>
+                                                                                    <option value="GS" data-short="+500" data-full="+500 South Georgia and the South Sandwich Islands">+500</option>
+                                                                                    <option value="KR" data-short="+82" data-full="+82 South Korea">+82</option>
+                                                                                    <option value="SS" data-short="+211" data-full="+211 South Sudan">+211</option>
+                                                                                    <option value="ES" data-short="+34" data-full="+34 Spain">+34</option>
+                                                                                    <option value="LK" data-short="+94" data-full="+94 Sri Lanka">+94</option>
+                                                                                    <option value="SD" data-short="+249" data-full="+249 Sudan">+249</option>
+                                                                                    <option value="SR" data-short="+597" data-full="+597 Suriname">+597</option>
+                                                                                    <option value="SJ" data-short="+47" data-full="+47 Svalbard and Jan Mayen">+47</option>
+                                                                                    <option value="SZ" data-short="+268" data-full="+268 Swaziland">+268</option>
+                                                                                    <option value="SE" data-short="+46" data-full="+46 Sweden">+46</option>
+                                                                                    <option value="CH" data-short="+41" data-full="+41 Switzerland">+41</option>
+                                                                                    <option value="SY" data-short="+963" data-full="+963 Syria">+963</option>
+                                                                                    <option value="TJ" data-short="+992" data-full="+992 Tajikistan">+992</option>
+                                                                                    <option value="TZ" data-short="+255" data-full="+255 Tanzania">+255</option>
+                                                                                    <option value="TH" data-short="+66" data-full="+66 Thailand">+66</option>
+                                                                                    <option value="CD" data-short="+243" data-full="+243 The Democratic Republic of Congo">+243</option>
+                                                                                                                    <option value="TG" data-short="+228" data-full="+228 Togo">+228</option>
+                                                                                    <option value="TK" data-short="+690" data-full="+690 Tokelau">+690</option>
+                                                                                    <option value="TO" data-short="+676" data-full="+676 Tonga">+676</option>
+                                                                                    <option value="TT" data-short="+1868" data-full="+1868 Trinidad and Tobago">+1868</option>
+                                                                                    <option value="TN" data-short="+216" data-full="+216 Tunisia">+216</option>
+                                                                                    <option value="TR" data-short="+90" data-full="+90 Turkey">+90</option>
+                                                                                    <option value="TM" data-short="+993" data-full="+993 Turkmenistan">+993</option>
+                                                                                    <option value="TC" data-short="+1649" data-full="+1649 Turks and Caicos Islands">+1649</option>
+                                                                                    <option value="TV" data-short="+688" data-full="+688 Tuvalu">+688</option>
+                                                                                    <option value="UG" data-short="+256" data-full="+256 Uganda">+256</option>
+                                                                                    <option value="UA" data-short="+380" data-full="+380 Ukraine">+380</option>
+                                                                                    <option value="AE" data-short="+971" data-full="+971 United Arab Emirates">+971</option>
+                                                                                    <option value="UK" data-short="+44" data-full="+44 United Kingdom">+44</option>
+                                                                                    <option value="US" data-short="+1" data-full="+1 United States">+1</option>
+                                                                                    <option value="UM" data-short="+1" data-full="+1 United States Minor Outlying Islands">+1</option>
+                                                                                    <option value="UY" data-short="+598" data-full="+598 Uruguay">+598</option>
+                                                                                    <option value="UZ" data-short="+998" data-full="+998 Uzbekistan">+998</option>
+                                                                                    <option value="VU" data-short="+678" data-full="+678 Vanuatu">+678</option>
+                                                                                    <option value="VE" data-short="+58" data-full="+58 Venezuela">+58</option>
+                                                                                    <option value="VN" data-short="+84" data-full="+84 Vietnam" selected="">+84</option>
+                                                                                    <option value="VG" data-short="+1" data-full="+1 Virgin Islands, British">+1</option>
+                                                                                    <option value="VI" data-short="+1" data-full="+1 Virgin Islands, U.S.">+1</option>
+                                                                                    <option value="WF" data-short="+681" data-full="+681 Wallis and Futuna">+681</option>
+                                                                                    <option value="EH" data-short="+212" data-full="+212 Western Sahara">+212</option>
+                                                                                    <option value="YE" data-short="+967" data-full="+967 Yemen">+967</option>
+                                                                                    <option value="ZM" data-short="+260" data-full="+260 Zambia">+260</option>
+                                                                                    <option value="ZW" data-short="+263" data-full="+263 Zimbabwe">+263</option>
+                                            </select>
+            </div>
+
+            <!--! phone -->
+            <div style="width:calc(100% - 100px)">
+                <input type="text" class="form-control rounded-end rounded-0" id="phone" name="phone" value="" autocomplete="off">
+                                    </div>
+        </div>
+    </div>
+
+    <!--! address -->
+    <div class="col-md-4 mb-4">
+        <label class="form-label text-muted" for="address"><i class="si si-pointer me-1"></i>Địa chỉ</label>
+        <input type="text" class="form-control" id="address" name="address" value="" autocomplete="off">
+                    </div>
+
+    <!--! gender -->
+    <div class="col-md-4 mb-4">
+        <label class="form-label text-muted" for="gender_1"><i class="si si-question me-1"></i>Giới tính</label>
+        <div class="py-1">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="gender_1" name="sex" value="male">
+                <label class="form-check-label" for="gender_1">Nam</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="gender_2" name="sex" value="female">
+                <label class="form-check-label" for="gender_2">Nữ</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="gender_0" name="sex" value="other">
+                <label class="form-check-label" for="gender_0">Khác</label>
+            </div>
+        </div>
+                    </div>
+
+    <!--! admin -->
+    <div class="col-md-4 mb-4">
+        <label class="form-label text-muted"><i class="si si-info me-1"></i>Loại tài khoản</label>
+        <input type="text" class="form-control" value="" disabled="">
+    </div>
+    </div>
+
+    <!--! submit -->
+    <div class="text-center">
+    <button type="submit" class="btn btn-hero btn-primary">
+        <i class="fa fa-fw fa-floppy-disk opacity-50 me-1"></i>Lưu			</button>
+    </div>
+    </div>
+</form>
+</main>

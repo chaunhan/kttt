@@ -6,6 +6,10 @@ const user = new Schema({
     ten: { type: String},
     pass: { type:String},
     ref: {type : String},
+    refin: {type : String},
+    phone: {type: String},
+    address: {type: String},
+    sex: {type : String},
     CreateAt: { type: Date, default: Date.now},
 });
 

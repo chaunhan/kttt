@@ -7,4 +7,6 @@ router.get('/home', authMiddleware.loggedin, controllers.home)
 router.get('/admin', controllers.admin)
 router.get('/userlist', controllers.userlist)
 router.get('/', controllers.index)
+router.get('/profile',authMiddleware.loggedin, controllers.profile)
+router.post('/updateprofile', authMiddleware.loggedin, controllers.updateprofile )
 module.exports = router;
