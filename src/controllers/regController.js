@@ -44,5 +44,6 @@ const register = async (req,res) => {
 
 module.exports = {
     create,
-    register
+    register,
+
 }

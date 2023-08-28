@@ -1,0 +1,142 @@
+
+<%- include('../layouts/headerlogin'); -%>
+
+<div class="bg-image bg-gd-lake">
+    <div class="bg-black-25">
+        <div class="content content-full">
+            <div class="py-5 text-center">
+                <!--! avatar -->
+                <div class="js-gallery js-gallery-enabled">
+                    <div class="d-flex justify-content-center">
+                        <div class="mr-3 ml-2 position-relative">
+                            <img class="img-link-zoom-in img-avatar img-avatar96 img-avatar-thumb ajax_cropper_img" data-lang="" data-name="avatar" src="/default/theme/assets/media/avatars/avatar10.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <!--! full_name -->
+                <h1 class="h3 fw-bold my-2 text-white"><%- user.ten -%></h1>
+                <div class="row justify-content-center">
+                    <div class="col-lg-5 col-md-8 col-sm-9">
+                        <div class="input-group mt-3 copyClipboard">
+                            <input type="text" readonly="" class="form-control" value="https://kiemtientictok.com/vi/referral/5291/">
+                            <div class="input-group-append">
+                                <button class="btn btn-success copyClipboard copy-btnz" data-clipboard-text="https://kiemtientictok.com/vi/referral/5291/" style="border-top-right-radius: 5px; border-bottom-right-radius: 5px" type="button" onclick="copyToClipboard(this)"><i class="fa fa-copy"></i></button>
+                            </div>
+
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<main id="main-container">
+    <div class="content">
+        <div class="row items-push">
+            <div class="col-sm-6 col-xl-3">
+                <div class="block block-rounded text-center d-flex flex-column h-100 mb-0">
+                    <div class="block-content block-content-full">
+                        <div class="item rounded-3 bg-body mx-auto my-3">
+                            <i class="fa fa-wallet fa-lg text-primary"></i>
+                        </div>
+                        <div class="fs-1 fw-bold">0 Đ</div>
+                        <div class="text-muted mb-3">Tài khoản</div>
+                    </div>
+                    <div class="block-content block-content-full block-content-sm bg-body-light fs-sm">
+                        <a class="fw-medium" href="/vi/cong-tac-vien/rut-tien/">
+                            Rút tiền
+                            <i class="fa fa-arrow-right ms-1 opacity-25"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+                <div class="block block-rounded text-center d-flex flex-column h-100 mb-0">
+                    <div class="block-content block-content-full flex-grow-1">
+                        <div class="item rounded-3 bg-body mx-auto my-3">
+                            <i class="fa fa-chart-line fa-lg text-primary"></i>
+                        </div>
+                        <div class="fs-1 fw-bold">0 Đ</div>
+                        <div class="text-muted mb-3">Doanh thu</div>
+                    </div>
+                    <div class="block-content block-content-full block-content-sm bg-body-light fs-sm">
+                        <a class="fw-medium" href="/vi/cong-tac-vien/lich-su-giao-dich/">
+                            Xem chi tiết
+                            <i class="fa fa-arrow-right ms-1 opacity-25"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+                <div class="block block-rounded text-center d-flex flex-column h-100 mb-0">
+                    <div class="block-content block-content-full flex-grow-1">
+                        <div class="item rounded-3 bg-body mx-auto my-3">
+                            <i class="fa fa-chart-line fa-lg text-primary"></i>
+                        </div>
+                        <div class="fs-1 fw-bold">0 Đ</div>
+                        <div class="text-muted mb-3">Tiền đã rút</div>
+                    </div>
+                    <div class="block-content block-content-full block-content-sm bg-body-light fs-sm">
+                        <a class="fw-medium" href="/vi/cong-tac-vien/lich-su-rut-tien/">
+                            Xem chi tiết
+                            <i class="fa fa-arrow-right ms-1 opacity-25"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+                <div class="block block-rounded text-center d-flex flex-column h-100 mb-0">
+                    <div class="block-content block-content-full flex-grow-1">
+                        <div class="item rounded-3 bg-body mx-auto my-3">
+                            <i class="fa fa-level-up-alt fa-lg text-primary"></i>
+                        </div>
+                        <div class="fs-1 fw-bold">0</div>
+                        <div class="text-muted mb-3">Đơn hàng của tuyến dưới</div>
+                    </div>
+                    <div class="block-content block-content-full block-content-sm bg-body-light fs-sm">
+                        <a class="fw-medium" href="/vi/cong-tac-vien/invoice/">
+                            Xem chi tiết
+                            <i class="fa fa-arrow-right ms-1 opacity-25"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+                <div class="block block-rounded text-center d-flex flex-column h-100 mb-0">
+                    <div class="block-content block-content-full flex-grow-1">
+                        <div class="item rounded-3 bg-body mx-auto my-3">
+                            <i class="fa fa-users fa-lg text-primary"></i>
+                        </div>
+                        <div class="fs-1 fw-bold">0</div>
+                        <div class="text-muted mb-3">Người dùng</div>
+                    </div>
+                    <div class="block-content block-content-full block-content-sm bg-body-light fs-sm">
+                        <a class="fw-medium" href="/vi/cong-tac-vien/users/">
+                            Danh sách tuyến dưới
+                            <i class="fa fa-arrow-right ms-1 opacity-25"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+<div id="copyalertz" class="alert alert-success dark" role="alert">
+    <a href="#">Đã sao chép</a>
+</div>
+<script src="js/popup-mess.js"></script>
+<style>
+		#copyalertz {
+				position: fixed;
+				left: 0;
+				right: 0;
+				display: none;
+				text-align: center;
+				max-width: 150px; /* Thay đổi kích thước tùy ý */
+				margin: 0 auto;
+			}
+</style>
+
+<%- include('../layouts/footer'); -%>

@@ -1,0 +1,45 @@
+<%- include('../layouts/headerlogin'); -%>
+<main id="main-container">
+    <div class="content content-full mw-100 bg-body-extra-light">
+
+        <!--! form -->
+        <!--! module/auth/form_alert -->
+
+<form action="/changepassword" method="POST">
+<div class="row">
+    <!--! warning -->
+    <div class="col-md-4 mb-4">
+        <div class="alert alert-warning" role="alert">
+            <p class="mb-0"><i class="fa fa-fw fa-exclamation-circle me-1"></i>Sau khi đổi mật khẩu, tài khoản của bạn sẽ tự động đăng xuất ở các thiết bị khác.</p>
+        </div>
+    </div>
+
+    <!--! current_password -->
+    <div class="col-md-4 mb-4">
+        <label class="form-label text-muted"><i class="si si-lock-open me-1"></i>Mật khẩu hiện tại</label>
+        <input type="password" class="form-control" autocomplete="off" id="current_password" name="pass">
+                    </div>
+
+    <div class="col-md-4">
+        <!--! password -->
+        <div class="mb-4">
+            <label class="form-label text-muted"><i class="si si-key me-1"></i>Mật khẩu mới</label>
+            <input type="password" class="form-control" autocomplete="off" id="password" name="newpass">
+                            </div>
+
+        <!--! confirm_password -->
+        <div class="mb-4">
+            <label class="form-label text-muted"><i class="si si-key me-1"></i>Xác nhận mật khẩu mới</label>
+            <input type="password" class="form-control" autocomplete="off" id="confirm_password" name="re-newpass">
+                            </div>
+    </div>
+</div>
+
+<!--! submit -->
+<div class="text-center">
+    <button type="submit" class="btn btn-hero btn-primary"><i class="fa fa-fw fa-floppy-disk opacity-50 me-1"></i>Lưu</button>
+</div>
+</form>
+
+    </div>
+</main>
