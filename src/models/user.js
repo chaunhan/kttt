@@ -10,6 +10,7 @@ const user = new Schema({
     phone: {type: String},
     address: {type: String},
     sex: {type : String},
+    tien: {type : Number},
     CreateAt: { type: Date, default: Date.now},
 });
 

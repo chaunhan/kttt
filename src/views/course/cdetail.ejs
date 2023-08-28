@@ -1,0 +1,458 @@
+<%- include('../layouts/headerlogin'); -%>
+
+<style>
+    .click-zoom input[type=checkbox] {
+        display: none
+    }
+    
+    .click-zoom img {
+        margin: 100px;
+        transition: transform 0.25s ease;
+        cursor: zoom-out
+    }
+    
+    .click-zoom input[type=checkbox]:checked~img {
+        transform: scale(0.5);
+        cursor: zoom-in
+    }
+    </style>
+<main id="main-container">
+    <div class="bg-image" style="background-image: url('https://kiemtientictok.com/default/theme/assets/media/photos/lp-headerbg.webp');">
+        <div class="">
+            <div class="content content-boxed content-full py-5">
+                <div class="row">
+                    <div class="col-md-8 d-flex align-items-center py-3">
+                        <div class="w-100 text-center text-md-start">
+                            <a class="btn btn-hero btn-primary js-click-ripple-enabled mb-4" href="javascript:void(0)" data-toggle="click-ripple" style="overflow: hidden; position: relative; z-index: 1;">
+                                <i class="fa fa-fw fa-users text-white"></i> <%= course.selled %> lượt mua
+                            </a>
+                            <h1 class="h2 text-white mb-2"><%= course.TenCourse %></h1>
+                            <h2 class="h4 fs-sm text-uppercase fw-semibold text-white-75">Cập nhật <%= course.createAt %></h2>
+                            <a class="fw-semibold" href="javascript:void(0)"><i class="fab fa-fw fa-leanpub text-white-50"></i><span style="color:#18ebdd;"> Bởi <%= course.author%></span></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-center">
+                                                                                                                                        <a class="block block-rounded block-link-shadow block-transparent bg-black-50 text-center mb-0 mx-auto buy_now" data-course="1" href="javascript:void(0)">  
+                                    <div class="block-content block-content-full px-5 py-4">
+                                        <div class="fs-sm fw-semibold text-uppercase text-white-50 ">Giá chỉ</div>
+                                        <div class="fs-2 fw-semibold text-white mt-1 push">
+                                            <span style="color:#18ebdd;">297,000đ</span>
+                                        </div>
+                                        <span class="btn btn-hero btn-primary">
+                                            <i class="fa fa-arrow-right opacity-50 me-1"></i> Đăng ký ngay
+                                        </span>
+                                    </div>
+                                </a>
+                                                                                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">	
+        <div class="rounded overflow-hidden push">
+        <div class="bg-image pt-9" style="    background-image: url(https://kiemtientictok.com/default/theme/assets/media/photos/footer-bg.webp);"></div>
+            
+            <div class="px-4 py-3 bg-body-extra-light d-flex flex-column flex-md-row align-items-center">
+                <div class="click-zoom">
+                    <label class="d-block img-link mt-n6">
+                        <input type="checkbox">
+                        <img class="img-avatar img-avatar256 img-avatar-thumb" src="/img/IMG_2811.jpg" alt="">
+                    </label>
+                </div>
+                <div class="ms-3 flex-grow-1 text-center text-md-start my-3 my-md-0">
+                    <h1 class="fs-4 fw-bold mb-1"><%= course.author %></h1>
+                    <h2 class="fs-sm fw-medium text-muted mb-0">
+                        CEO at kiemtientictok.com
+                    </h2>
+                </div>
+                <div class="ms-3 flex-grow-1 text-center text-md-start my-3 my-md-0">
+                <a target="_blank" href="https://bit.ly/FaceLucas79">
+                    <span class="fa-stack">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                    </span>
+                    https://bit.ly/FaceLucas79						</a>
+                </div> 
+                <div class="ms-3 flex-grow-1 text-center text-md-start my-3 my-md-0">
+                <a target="_blank" href="https://m.youtube.com/">
+                    <span class="fa-stack">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                    </span>
+                    https://m.youtube.com/						</a>
+                </div> 
+            </div>
+            <div class="block block-themed">
+                <div class="block-content">
+                    <p></p><p>Hơn 5 năm chinh chiến với các mô hình MMO khác nhau, đặc biệt là affiliate marketing. Kiếm tiền từ tiếp thị liên kết trên các nền tảng lớn như Accesstrade, MasOffer, AdFlex… Các&nbsp;<span style="font-size: var(--bs-body-font-size); font-weight: var(--bs-body-font-weight); text-align: var(--bs-body-text-align);">nền tảng Affiliate marketing hàng đầu Đông Nam Á thực chiến tại Kiemtiennhanh24h. Founder &amp; CEO tại KT Tictok - nền tảng chia sẻ tri thức chất lượng với hơn 50.000 người dùng.</span></p><p></p>
+                </div>
+            </div>
+        </div>
+
+       
+        <div class="row">
+            <div class="col-xl-4">
+                <div class="block block-rounded">
+                    <div class="block-content p-0 overflow-hidden">
+                        <a class="img-link" href="javascript:void(0)">
+                            <img class="img-fluid rounded-top" src="/upload/course/2023/07/05/khoa-hoc-769252.jpg">
+                        </a>
+                    </div>
+                                                
+                                                <div class="block-content border-bottom">
+                        <h4 class="font-size-h5">Giải Pháp Kiếm Tiền Trên TikTok Thu Nhập Từ 20Triệu/Tháng</h4>
+                        <h5 class="font-size-h2 font-w300">297,000 đ</h5>
+                       
+                        <hr>
+                    </div>
+                   <div class="block-content block-content-full">
+                        <div class="row">
+                                                                                                            <div class="col-12">
+                                                                                    <a class="w-100 btn btn-hero btn-noborder btn-primary btn-lg add_cart" data-course="1" href="javascript:void(0)">
+                                            Thêm
+                                        </a>
+                                                                            </div>
+                                                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8">
+                <div class="block block-rounded">
+                    <div class="block">
+                        <ul class="nav nav-tabs nav-tabs-alt" id="myTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link active" id="tab-home" data-bs-toggle="tab" href="#btabs-alt-static-home" role="tab" aria-controls="btabs-alt-static-home" aria-selected="true">Chi tiết khóa học</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="tab-profile" data-bs-toggle="tab" href="#btabs-alt-static-profile" role="tab" aria-controls="btabs-alt-static-profile" aria-selected="false" tabindex="-1">Nội dung khóa học</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="tab-profile" data-bs-toggle="tab" href="#btabs-alt-static-author" role="tab" aria-controls="btabs-alt-static-profile" aria-selected="false" tabindex="-1">Về tác giả</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="tab-author" data-bs-toggle="tab" href="#btabs-alt-static-skill" role="tab" aria-controls="btabs-alt-static-author" aria-selected="false" tabindex="-1">Các kỹ năng sẽ học được</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="tab-author" data-bs-toggle="tab" href="#btabs-feedback" role="tab" aria-controls="btabs-alt-static-author" aria-selected="false" tabindex="-1">Phản hồi
+                                                                                <span class="nav-main-link-badge badge rounded-pill bg-primary">10</span>
+                                                                            </a>
+                            </li>
+                        </ul>
+                        <div class="block-content tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="btabs-alt-static-home" role="tabpanel" aria-labelledby="tab-home">
+                                <div class="block-content">
+                                    <table class="table table-borderless table-vcenter mb-30">
+                                         
+                                             
+                                                <tbody><tr class="table-active" style="border-bottom: 3px solid #fff;">
+                                                    <td class="text-center" style="width: 50px;"><i class="si si-folder-alt"></i></td>
+                                                    <td><a class="prevent-downline" target="_blank" href="/vi/lesson/detail/bai-1-nguoi-moi-ngay-kiem-duoc-bao-nhieu-tien-tren-tiktok/4/">Bài 1: Người mới ngày kiếm được bao nhiêu tiền trên Tiktok?</a></td>
+                                                    <td class="font-size-sm text-end text-nowrap">
+                                                                                                                                    <code>Học thử</code>
+                                                                 
+                                                    </td>
+                                                </tr>
+                                            
+                                             
+                                                <tr class="table-active" style="border-bottom: 3px solid #fff;">
+                                                    <td class="text-center" style="width: 50px;"><i class="si si-folder-alt"></i></td>
+                                                    <td><a class="prevent-downline" target="_blank" href="/vi/lesson/detail/bai-2-xem-mot-luot-cach-kiem-tien-tren-tiktok-phan-1-/5/">Bài 2: Xem một lượt cách kiếm tiền trên Tiktok ( phần 1 )</a></td>
+                                                    <td class="font-size-sm text-end text-nowrap">
+                                                                                                                                    <code>Học thử</code>
+                                                                 
+                                                    </td>
+                                                </tr>
+                                            
+                                             
+                                                <tr class="table-active" style="border-bottom: 3px solid #fff;">
+                                                    <td class="text-center" style="width: 50px;"><i class="si si-folder-alt"></i></td>
+                                                    <td><a class="prevent-downline" target="_blank" href="/vi/lesson/detail/bai-3-xem-mot-luot-cach-kiem-tien-tren-tiktok-phan-2-/6/">Bài 3: Xem một lượt cách kiếm tiền trên Tiktok ( phần 2 )</a></td>
+                                                    <td class="font-size-sm text-end text-nowrap">
+                                                         
+                                                    </td>
+                                                </tr>
+                                            
+                                             
+                                                <tr class="table-active" style="border-bottom: 3px solid #fff;">
+                                                    <td class="text-center" style="width: 50px;"><i class="si si-folder-alt"></i></td>
+                                                    <td><a class="prevent-downline" target="_blank" href="/vi/lesson/detail/bai-4-tao-tai-khoan-vang-kiem-1000-tren-tiktok/7/">Bài 4: Tạo tài khoản vàng kiếm 1000$ trên Tiktok</a></td>
+                                                    <td class="font-size-sm text-end text-nowrap">
+                                                         
+                                                    </td>
+                                                </tr>
+                                            
+                                             
+                                                <tr class="table-active" style="border-bottom: 3px solid #fff;">
+                                                    <td class="text-center" style="width: 50px;"><i class="si si-folder-alt"></i></td>
+                                                    <td><a class="prevent-downline" target="_blank" href="/vi/lesson/detail/bai-5-phuong-phap-them-san-pham-vao-gio-hang-tren-tiktok-shop-de-nguoi-moi-bat-dau-co-hoa-hong/8/">Bài 5:  Phương pháp thêm sản phẩm vào giỏ hàng trên Tiktok shop để người mới bắt đầu có hoa hồng</a></td>
+                                                    <td class="font-size-sm text-end text-nowrap">
+                                                         
+                                                    </td>
+                                                </tr>
+                                            
+                                             
+                                                <tr class="table-active" style="border-bottom: 3px solid #fff;">
+                                                    <td class="text-center" style="width: 50px;"><i class="si si-folder-alt"></i></td>
+                                                    <td><a class="prevent-downline" target="_blank" href="/vi/lesson/detail/bai-6-bi-quyet-kiem-100-don-moi-ngay/9/">Bài 6: Bí quyết kiếm 100 đơn mỗi ngày</a></td>
+                                                    <td class="font-size-sm text-end text-nowrap">
+                                                         
+                                                    </td>
+                                                </tr>
+                                            
+                                             
+                                                <tr class="table-active" style="border-bottom: 3px solid #fff;">
+                                                    <td class="text-center" style="width: 50px;"><i class="si si-folder-alt"></i></td>
+                                                    <td><a class="prevent-downline" target="_blank" href="/vi/lesson/detail/bai-7-tep-san-pham-hot-x10-doanh-thu-cua-ban-moi-ngay/10/">Bài 7: Tệp sản phẩm HOT x10 doanh thu của bạn mỗi ngày</a></td>
+                                                    <td class="font-size-sm text-end text-nowrap">
+                                                         
+                                                    </td>
+                                                </tr>
+                                            
+                                             
+                                                <tr class="table-active" style="border-bottom: 3px solid #fff;">
+                                                    <td class="text-center" style="width: 50px;"><i class="si si-folder-alt"></i></td>
+                                                    <td><a class="prevent-downline" target="_blank" href="/vi/lesson/detail/bai-8-huong-dan-lam-video-hang-chuc-hang-tram-ngan-view/11/">Bài 8: Hướng dẫn làm video hàng chục hàng trăm ngàn view</a></td>
+                                                    <td class="font-size-sm text-end text-nowrap">
+                                                         
+                                                    </td>
+                                                </tr>
+                                            
+                                             
+                                                <tr class="table-active" style="border-bottom: 3px solid #fff;">
+                                                    <td class="text-center" style="width: 50px;"><i class="si si-folder-alt"></i></td>
+                                                    <td><a class="prevent-downline" target="_blank" href="/vi/lesson/detail/bai-9-cach-them-san-pham-vao-video-de-dang-nhat/12/">Bài 9: Cách thêm sản phẩm vào video dễ dàng nhất</a></td>
+                                                    <td class="font-size-sm text-end text-nowrap">
+                                                         
+                                                    </td>
+                                                </tr>
+                                            
+                                             
+                                                <tr class="table-active" style="border-bottom: 3px solid #fff;">
+                                                    <td class="text-center" style="width: 50px;"><i class="si si-folder-alt"></i></td>
+                                                    <td><a class="prevent-downline" target="_blank" href="/vi/lesson/detail/bai-10-meo-khac-phuc-loi-nho-cho-nguoi-moi/13/">Bài 10: Mẹo khắc phục lỗi nhỏ cho người mới</a></td>
+                                                    <td class="font-size-sm text-end text-nowrap">
+                                                         
+                                                    </td>
+                                                </tr>
+                                            
+                                             
+                                                <tr class="table-active" style="border-bottom: 3px solid #fff;">
+                                                    <td class="text-center" style="width: 50px;"><i class="si si-folder-alt"></i></td>
+                                                    <td><a class="prevent-downline" target="_blank" href="/vi/lesson/detail/bai-11-cach-rut-tien-30-giay-ve-tai-khoan/14/">Bài 11: Cách rút tiền 30 giây về tài khoản</a></td>
+                                                    <td class="font-size-sm text-end text-nowrap">
+                                                         
+                                                    </td>
+                                                </tr>
+                                            
+                                             
+                                                <tr class="table-active" style="border-bottom: 3px solid #fff;">
+                                                    <td class="text-center" style="width: 50px;"><i class="si si-folder-alt"></i></td>
+                                                    <td><a class="prevent-downline" target="_blank" href="/vi/lesson/detail/bai-12-ban-vua-nem-qua-cua-30-trieu-neu-bo-qua-bai-hoc-nay/15/">Bài 12: Bạn vừa ném qua cửa 30 triệu nếu bỏ qua bài học này</a></td>
+                                                    <td class="font-size-sm text-end text-nowrap">
+                                                         
+                                                    </td>
+                                                </tr>
+                                            
+                                             
+                                                <tr class="table-active" style="border-bottom: 3px solid #fff;">
+                                                    <td class="text-center" style="width: 50px;"><i class="si si-folder-alt"></i></td>
+                                                    <td><a class="prevent-downline" target="_blank" href="/vi/lesson/detail/bai-12b-4-buoc-lam-mot-video-review-san-pham-/16/">Bài 12b: 4 bước làm một video review sản phẩm </a></td>
+                                                    <td class="font-size-sm text-end text-nowrap">
+                                                         
+                                                    </td>
+                                                </tr>
+                                            
+                                                                                                                                        </tbody></table>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="btabs-alt-static-profile" role="tabpanel" aria-labelledby="tab-profile">
+                                <p>Bạn đang muốn có nguồn thu nhập đều đặn?</p><p>Bạn đang tìm hiểu về kiếm tiền online?</p><p>Bạn muốn bắt đầu một cách đơn giản và dễ dàng?</p><p>Bạn có tài khoản Tiktok nhưng chưa kiếm được tiền?</p><p>Khóa học kiếm tiền từ TikTok sẽ cho bạn một khởi đầu đơn giản và một kết quả đỉnh cao. Khi chỉ với chiếc điện thoại bạn đã có thể bắt đầu việc kiếm tiền trên TikTok ngay hôm nay. Khóa học thực chiến, đơn giản dễ làm, tại nhà trên chiếc điện thoại di dộng. Sau khi học xong cam kết bạn có thể bắt đầu việc kiếm tiền trên TikTok ngay. Còn chần chờ gì nữa mà không đăng ký ngay hôm nay, mức giá khuyến mãi chỉ còn 24 giờ</p>									</div>
+                            <div class="tab-pane fade pb-4" id="btabs-alt-static-author" role="tabpanel" aria-labelledby="tab-settings">
+                                <div class="row">
+                                        <div class="col-md-4">
+                                            <div class=" w-100 flex-grow-1 rounded bg-body d-flex align-items-center">
+                                                <div class=" block block-rounded block-transparent mb-0 w-100">
+                                                  <div class=" text-center">
+                                                    <a class="author__image" href="#"></a>
+                                                      <img class="img-fluid" src="/upload/expert/2023/06/29/chuyen-gia-127077.jpg" alt="">
+                                                    
+                                                    
+                                                  </div>
+                                                </div>
+                                              </div>
+                                        </div>
+                                    <div class="col-md-8">
+                                        <p>Hơn 5 năm chinh chiến với các mô hình MMO khác nhau, đặc biệt là affiliate marketing. Kiếm tiền từ tiếp thị liên kết trên các nền tảng lớn như Accesstrade, MasOffer, AdFlex… Các&nbsp;<span style="font-size: var(--bs-body-font-size); font-weight: var(--bs-body-font-weight); text-align: var(--bs-body-text-align);">nền tảng Affiliate marketing hàng đầu Đông Nam Á thực chiến tại Kiemtiennhanh24h. Founder &amp; CEO tại KT Tictok - nền tảng chia sẻ tri thức chất lượng với hơn 50.000 người dùng.</span></p>											</div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade pb-4" id="btabs-alt-static-skill" role="tabpanel" aria-labelledby="tab-settings">
+                               Có thế bạn đã biết, Tiktok đã thay đổi hoàn toàn thói quen mua sắm của khách hàng. Đây chính là cơ hội tuyệt vời cho tất cả những ai muốn bắt đầu cuộc chơi kinh doanh online. Khóa học này giúp các bạn biến Trang cá nhân trên Tiktok của bạn,  ban đầu chỉ mang tính chất giải trí của mình thành nơi kiếm tiền hiệu quả. Các bạn sẽ được Chuyên gia hướng dẫn bài bản từng bước, từ việc thiết lập trang cá nhân Tiktok, đến việc tăng lượt theo dõi, lượt liên kết với giỏ hàng của bạn, phương pháp để tăng thêm thu nhập từ vài triệu đến vài chục triệu/ tháng đơn giản nhất cho người mới bắt đầu”									</div>
+                            <div class="tab-pane fade pb-4" id="btabs-feedback" role="tabpanel" aria-labelledby="tab-settings">
+                                <div class="block block-rounded">
+                                    <div class="">
+                                        <table class="table table-striped table-borderless table-vcenter">
+                                            <tbody>
+                                                                                                        <tr>
+                                                    <td class="d-md-table-cell" style="width:  50px">
+                                                        <img src="/upload/comment/2023/07/05/binh-luan-895064.jpg" style="width: 50px">
+                                                    </td>
+                                                    <td>
+                                                        <div class="py-1">
+                                                            <div class="fs-sm fw-bold mb-2">
+                                                                <span class="text-muted me-3" style="font-size: 13px">Phạm Nhật Hà</span>
+                                                                <span class="text-primary" style="display: inline-block; font-size: 13px">
+                                                                    <i class="fa fa-clock"></i> 2023-07-01 09:15																		  </span>
+                                                            </div>
+                                                            <p>Mình rất thích cách Lucas Đào tạo. Bạn hướng dẫn rất chi tiết, dễ hiểu. Người dạy rất có tâm, quan tâm đến trải nghiệm người học.</p>																</div>
+                                                    </td>
+                                                </tr>
+                                                                                                        <tr>
+                                                    <td class="d-md-table-cell" style="width:  50px">
+                                                        <img src="/upload/comment/2023/07/05/binh-luan-499209.jpg" style="width: 50px">
+                                                    </td>
+                                                    <td>
+                                                        <div class="py-1">
+                                                            <div class="fs-sm fw-bold mb-2">
+                                                                <span class="text-muted me-3" style="font-size: 13px">Minh Ánh</span>
+                                                                <span class="text-primary" style="display: inline-block; font-size: 13px">
+                                                                    <i class="fa fa-clock"></i> 2023-07-04 14:05																		  </span>
+                                                            </div>
+                                                            <p>Mình là người mới và mình cảm thấy các bài viết khá chi tiết và dễ hiểu. Khóa học mình thấy những bạn mới có thể học rất tốt để tạo nên cái nền tảng bạn đầu cho mình để học thêm những cái khác, mình đã có kết quả ngay từ ngày đầu tiên! Rất giá trị</p>																</div>
+                                                    </td>
+                                                </tr>
+                                                                                                        <tr>
+                                                    <td class="d-md-table-cell" style="width:  50px">
+                                                        <img src="/upload/comment/2023/07/05/binh-luan-915536.jpg" style="width: 50px">
+                                                    </td>
+                                                    <td>
+                                                        <div class="py-1">
+                                                            <div class="fs-sm fw-bold mb-2">
+                                                                <span class="text-muted me-3" style="font-size: 13px">Nguyễn Ngọc Lan</span>
+                                                                <span class="text-primary" style="display: inline-block; font-size: 13px">
+                                                                    <i class="fa fa-clock"></i> 2023-07-01 15:45																		  </span>
+                                                            </div>
+                                                            <p>Mình đã biết đến hình thức kiếm tiền affiliate marketing tren tiktok từ năm 2020, đã làm nhưng không hiệu quả vì không kiên trì, cũng làm website... giờ quyết tâm đầu tư làm lại một cách bài bải nhất mình đã mua khóa học đầu tư kiến thức để có một định hướng đúng, tư duy đúng, cảm ơn Kiemtien Tictok có những khóa học cung cấp những kiến thức mà không một trường học nào dạy. Chúc tập thể Admin KiemtienTictok ngày càng phát triển và cho ra những khóa học chất lượng, một lần nữa xin cảm ơn tất cả !</p>																</div>
+                                                    </td>
+                                                </tr>
+                                                                                                        <tr>
+                                                    <td class="d-md-table-cell" style="width:  50px">
+                                                        <img src="/upload/comment/2023/07/05/binh-luan-951276.jpg" style="width: 50px">
+                                                    </td>
+                                                    <td>
+                                                        <div class="py-1">
+                                                            <div class="fs-sm fw-bold mb-2">
+                                                                <span class="text-muted me-3" style="font-size: 13px">Bích Hồng</span>
+                                                                <span class="text-primary" style="display: inline-block; font-size: 13px">
+                                                                    <i class="fa fa-clock"></i> 2023-07-02 11:15																		  </span>
+                                                            </div>
+                                                            <p>Với người mới như mình tiếp cận Affiliate Marketing trên Tiktok  thì đây là thông tin rất hữu ích và cơ bản. Giúp mình hình dung cơ bản các khái niệm, thị trường, cách thức xây dựng 1 tài khoản Affiliate Marketing làm tiếp thị liên kết đúng nhất, hiệu quả nhất. Đặc biệt nội dung bài giảng được thiết kế theo lộ trình từng bước và video nên mình có thể xem lại nhiều lần khi quên. Cảm ơn Lucas Nguyen và Kiemtientictok.com</p>																</div>
+                                                    </td>
+                                                </tr>
+                                                                                                        <tr>
+                                                    <td class="d-md-table-cell" style="width:  50px">
+                                                        <img src="/upload/comment/2023/07/05/binh-luan-947411.jpg" style="width: 50px">
+                                                    </td>
+                                                    <td>
+                                                        <div class="py-1">
+                                                            <div class="fs-sm fw-bold mb-2">
+                                                                <span class="text-muted me-3" style="font-size: 13px">Văn Lâm</span>
+                                                                <span class="text-primary" style="display: inline-block; font-size: 13px">
+                                                                    <i class="fa fa-clock"></i> 2023-06-21 07:55																		  </span>
+                                                            </div>
+                                                            <p>Mình đã đi tham khảo khá nhiều nơi nhưng đây là khóa học phù hợp với mức giá khá rẻ, rẻ ở đây là rẻ hơn mức giá để có được những kiến thức được sắp xếp kĩ càng . Mình rất thích cách AD Lucas đào tạo, cụ thể và dễ hiểu. Mong Kiemtientiktok phát triển mạnh mẽ cho nhiều người biết đến!&nbsp;</p>																</div>
+                                                    </td>
+                                                </tr>
+                                                                                                        <tr>
+                                                    <td class="d-md-table-cell" style="width:  50px">
+                                                        <img src="/upload/comment/2023/07/05/binh-luan-287585.jpg" style="width: 50px">
+                                                    </td>
+                                                    <td>
+                                                        <div class="py-1">
+                                                            <div class="fs-sm fw-bold mb-2">
+                                                                <span class="text-muted me-3" style="font-size: 13px">Trần Mai</span>
+                                                                <span class="text-primary" style="display: inline-block; font-size: 13px">
+                                                                    <i class="fa fa-clock"></i> 2023-06-23 12:00																		  </span>
+                                                            </div>
+                                                            Khóa học đầy đủ, nội dung rõ ràng, dễ hiểu cho người mới bắt đầu. Sau khi học xong, người học có thể tự làm một cách dễ dàng và có hoa hồng ngay.Bên cạnh đó, người học có thể biết được các nguyên nhân dẫn  các sự cố liên quan và cách khắc phục trong quá trình kiếm tiền trên Tiktok, mình rất hài lòng!																</div>
+                                                    </td>
+                                                </tr>
+                                                                                                        <tr>
+                                                    <td class="d-md-table-cell" style="width:  50px">
+                                                        <img src="/upload/comment/2023/07/06/binh-luan-297546.jpg" style="width: 50px">
+                                                    </td>
+                                                    <td>
+                                                        <div class="py-1">
+                                                            <div class="fs-sm fw-bold mb-2">
+                                                                <span class="text-muted me-3" style="font-size: 13px">Nguyễn Thị Thúy</span>
+                                                                <span class="text-primary" style="display: inline-block; font-size: 13px">
+                                                                    <i class="fa fa-clock"></i> 2023-07-06 12:10																		  </span>
+                                                            </div>
+                                                            <p>Bài giảng rất dễ hiểu. Cảm ơn tác giả Lucas Nguyen và KiemtienTicTok!!! Hy vọng học được nhiều khoá học bổ ích nữa ở đây!</p>																</div>
+                                                    </td>
+                                                </tr>
+                                                                                                        <tr>
+                                                    <td class="d-md-table-cell" style="width:  50px">
+                                                        <img src="/upload/comment/2023/07/06/binh-luan-711482.jpg" style="width: 50px">
+                                                    </td>
+                                                    <td>
+                                                        <div class="py-1">
+                                                            <div class="fs-sm fw-bold mb-2">
+                                                                <span class="text-muted me-3" style="font-size: 13px">Minh Thu</span>
+                                                                <span class="text-primary" style="display: inline-block; font-size: 13px">
+                                                                    <i class="fa fa-clock"></i> 2023-07-06 14:45																		  </span>
+                                                            </div>
+                                                            <p>Không cần đi đâu xa! Ngồi ở nhà và học&nbsp;<span style="font-size: var(--bs-body-font-size); font-weight: var(--bs-body-font-weight); text-align: var(--bs-body-text-align);">để tối ưu cho công việc kinh doanh của bạn. Khóa học kiemtientictok đã đưa mình từ 1 người mới với ở cấp độ tập sự, không biết về tiếp thị liên kết là gì</span><span style="font-size: var(--bs-body-font-size); font-weight: var(--bs-body-font-weight); text-align: var(--bs-body-text-align);">có thể triển khai một cách chuyên nghiệp Công việc kinh doanh mà không gặp bất cứ khó khăn nào vì có admin hỗ trợ. Từ việc hiểu cơ chế, thuật toán hiển thị cho tới phân tích insight khách hàng, sáng tạo nội dung phù hợp &amp; cả cách target, seeding,...</span><span style="font-size: var(--bs-body-font-size); font-weight: var(--bs-body-font-weight); text-align: var(--bs-body-text-align);">Tất cả đều tuyệt vời! Mình vote cho Khoá đào tạo kiếm tiền của Lucas 9,5 điểm.</span></p>																</div>
+                                                    </td>
+                                                </tr>
+                                                                                                        <tr>
+                                                    <td class="d-md-table-cell" style="width:  50px">
+                                                        <img src="/upload/comment/2023/07/06/binh-luan-574357.jpg" style="width: 50px">
+                                                    </td>
+                                                    <td>
+                                                        <div class="py-1">
+                                                            <div class="fs-sm fw-bold mb-2">
+                                                                <span class="text-muted me-3" style="font-size: 13px">Trần Tuyết</span>
+                                                                <span class="text-primary" style="display: inline-block; font-size: 13px">
+                                                                    <i class="fa fa-clock"></i> 2023-07-06 13:05																		  </span>
+                                                            </div>
+                                                            <p>Khóa học đầy đủ, nội dung rõ ràng, dễ hiểu cho người mới bắt đầu. Sau khi học xong, người học có thể tự làm một cách dễ dàng và có hoa hồng ngay.Bên cạnh đó, người học có thể biết được các nguyên nhân dẫn  các sự cố liên quan và cách khắc phục trong quá trình kiếm tiền trên Tiktok, mình rất hài lòng!</p>																</div>
+                                                    </td>
+                                                </tr>
+                                                                                                        <tr>
+                                                    <td class="d-md-table-cell" style="width:  50px">
+                                                        <img src="/upload/comment/2023/07/06/binh-luan-838154.jpg" style="width: 50px">
+                                                    </td>
+                                                    <td>
+                                                        <div class="py-1">
+                                                            <div class="fs-sm fw-bold mb-2">
+                                                                <span class="text-muted me-3" style="font-size: 13px">Vũ Hương Liên</span>
+                                                                <span class="text-primary" style="display: inline-block; font-size: 13px">
+                                                                    <i class="fa fa-clock"></i> 2023-07-06 07:00																		  </span>
+                                                            </div>
+                                                            <p>Mình thấy khóa học Bắt đầu tạo thu nhập tại nhà với affiliate marketing (Tiếp thị liên kết) trên nền tảng Tiktok một cách dễ dàng cho người mới bắt đầu&nbsp;<span style="font-size: var(--bs-body-font-size); font-weight: var(--bs-body-font-weight); text-align: var(--bs-body-text-align);">của KiemtienTictok với lượng kiến thức rất đồ sộ và được hướng dẫn các phương pháp rất kỹ và cụ thể, giúp cho những bạn newbie như mình có thể nhanh chóng nắm bắt được quy trình làm với nhiều hình thức tiếp cận, quảng bá sản phẩm đa dạng!&nbsp;</span></p>																</div>
+                                                    </td>
+                                                </tr>
+                                                                                                    </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-image" style="background-image: url('https://kiemtientictok.com/default/theme/assets/media/various/996772_m.jpg');">
+        <div class="bg-black-op">
+            <div class="content">
+                <div class="py-5 nice-copy text-center">
+                                                                                                                        <h3 class="font-w700 mb-1">Đăng ký học ngay hôm nay</h3>
+                            <h4 class="font-w400 mb-3">Để tiến bộ hơn mỗi ngày</h4>
+                            <a class="btn btn-hero btn-noborder btn-lg btn-rounded btn-success buy_now" data-course="1" href="javascript:void(0)">Đăng ký</a>
+                                                                            </div>
+            </div>
+        </div>
+    </div>
+</main>

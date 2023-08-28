@@ -18863,6 +18863,11 @@ a.block.block-link-shadow:active {
     height: 128px
 }
 
+.img-avatar.img-avatar256 {
+    width: 256px;
+    height: 256px
+}
+
 .img-avatar-thumb {
     margin: .25rem;
     box-shadow: 0 0 0 .25rem rgba(255,255,255,.3)

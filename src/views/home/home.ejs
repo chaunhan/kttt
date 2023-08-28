@@ -48,7 +48,7 @@
             <% for(var i = 0; i < sp_ar.length; i++) { %>
             <div class="col-md-6 col-xl-4">
                 
-                <a class="block block-link-shadow block-rounded text-center" href="#">
+                <a class="block block-link-shadow block-rounded text-center" href="/detail/<%= sp_ar[i].TenCourse %>">
                 <div class="d-flex align-items-center justify-content-between">
                     <div class="zz block-content-full ribbon ribbon-left ">
                         <div style="color: rgb(4, 206, 158);font-weight: bold;font-size: 1.2rem;"><%= sp_ar[i].GiaCourse %>đ</div>
@@ -156,3 +156,5 @@
             </li>
         </ul>
     </div>
+
+<%- include('../layouts/footer'); -%>

@@ -8,37 +8,6 @@ const dangnhap = (req, res) => {
 }
 
 const login = async (req,res) => {
-    // try {
-    //     const check = await User.findOne({ email: req.body.email });
-    //     console.log(check.pass);
-    //     console.log(req.body.pass);
-    //     if (check.pass != "") {
-    //         const comparePassword = bcrypt.compareSync(check.pass, req.body.pass)
-    //         console.log(comparePassword)
-    //         if (!comparePassword) {
-    //                 req.session.loggedin = true;
-    //                 req.session.user = user;
-    //                 res.redirect('/home');
-    //             } else {
-    //                 const conflictError = 'LỖI';
-    //                 res.render('./login/dangnhap.ejs', {email: req.body.email, pass : req.body.pass, conflictError});
-    //             }
-    //         console.log("dn tc");
-    //         const s = new logins(req.body);
-    //     try {
-    //         await s.save();
-    //         console.log("UserData: " , s);
-    //         console.log("da lưu log");
-    //     } catch (error) {
-    //         res.status(500).send(error);
-    //         console.log(error);
-    //     }
-    //     }else {
-    //     console.log("null");
-    //     }
-    // } catch (err) {
-    //     console.log("that bai ", err);
-    // }
     try {
         const { email, pass} = req.body;
 

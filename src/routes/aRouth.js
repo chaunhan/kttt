@@ -6,7 +6,7 @@ const cpass = require("../controllers/cpassController");
 const authMiddleware = require("../middlewares/auth.middlewares");
 
 
-router.get('/login', authMiddleware.isAuth ,login.dangnhap)
+router.get('/dangnhap', authMiddleware.isAuth ,login.dangnhap)
 router.post('/login', login.login)
 
 router.get('/register', authMiddleware.isAuth, register.create)
