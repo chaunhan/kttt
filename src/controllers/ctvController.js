@@ -3,17 +3,28 @@ const User = require('../models/user');
 const BankInfor = require('../models/bankInfo');
 
 
+let VND = new Intl.NumberFormat('vi-VN', {
+    style: 'currency',
+    currency: 'VND'
+});
+
+
 const create = (req,res) => {
-    res.render('./ctv/index.ejs', {user: req.session.user});
+    const tien = VND.format(req.session.user.tien)
+    console.log(tien)
+    res.render('./ctv/index.ejs', {user: req.session.user, tien : tien});
 }
 
 const withdraw = async (req,res) => {
+    const tien = VND.format(req.session.user.tien)
+    console.log(tien)
+    const {amout , phone_otp} = req.body
     await BankInfor.findOne({email: req.session.user.email}).then((bi) => {
         if(bi){
             console.log(bi)
-            res.render('./ctv/with-draw', {user: req.session.user, bankinfo: bi.toJSON()})
+            res.render('./ctv/with-draw', {user: req.session.user, bankinfo: bi.toJSON(), tien: tien})
         } else {
-            res.render('./ctv/with-draw-err', {user: req.session.user})
+            res.render('./ctv/with-draw-err', {user: req.session.user, tien: tien})
         }
     })
 }
@@ -55,6 +66,13 @@ const addBank = async (req,res) => {
     }
 }
 
+const withdraw1 = async (req, res) => {
+    const {phone_otp, amount} = req.body
+    const emailOtp = Math.floor(Math.random() * 90000) + 10000;
+    const email = req.session.user.email
+
+}
+
 module.exports = {
     create,
     withdraw,
@@ -62,6 +80,6 @@ module.exports = {
     withdrawHistory,
     invoice,
     users,
-    addBank
-
+    addBank,
+    withdraw1
 }

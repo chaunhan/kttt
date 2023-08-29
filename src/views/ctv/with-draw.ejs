@@ -23,7 +23,7 @@
                     <div class="col-lg-6">
                         <div class="account-card">
                             <div class="account-content">
-                                <form method="post" class="form-signup" id="main_form">
+                                <form action="/ctv/rut-tien" method="post" class="form-signup" id="main_form">
                                     <div class="w_address_main">
                                         <fieldset class="form-group">
                                             <label for="address">Tài khoản ngân hàng <span class="error">*</span></label>
@@ -46,14 +46,14 @@
                                     <fieldset class="form-group">
                                         <div class="mt-2 mb-2">
                                             <label for="amount">Số tiền <span class="error">*</span></label>
-                                            <strong class="text-primary balance" style="float: right">Số dư: <span class="balance">0</span></strong>
+                                            <strong class="text-primary balance" style="float: right">Số dư: <span class="balance"><%= tien %></span></strong>
                                         </div>
                                         <input name="amount" class="amount auto_numeric form-control " value="">
                                                                                     <span class="error error_amount text-danger"></span>
                                         <div class="mt-2">
                                             <p class="mb-0"><strong class="text-primary">Tối thiểu: <span class="min_amount">50.000</span></strong></p>
                                             <p class="mb-0"><strong class="text-primary">Phí rút: <span class="total_fee">1.000</span></strong></p>
-                                            <p class="mb-0"><strong class="text-primary">Số tiền tối đa bạn có thể rút: <span class="total_receive">0</span></strong></p>
+                                            <p class="mb-0"><strong class="text-primary">Số tiền tối đa bạn có thể rút: <span class="total_receive"><%= tien %></span></strong></p>
                                         </div>
                                     </fieldset>
                                     <fieldset class="form-group mt-2">
@@ -83,7 +83,7 @@
 <div class="modal" id="bank_modal" tabindex="-1" aria-labelledby="modal-block-normal" style="display: none;" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
-			<form method="post" class="quick-view-product">
+			<form action="/ctv/addbank" method="post" class="quick-view-product">
 				<div class="block block-rounded block-themed block-transparent mb-0">
 					<div class="block-header bg-primary-dark">
 						<h3 class="block-title">Thêm tài khoản ngân hàng</h3>
@@ -126,7 +126,7 @@
 <div id="bank_list_modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-block-normal" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
-			<form method="post" class="quick-view-product">
+			<form action="/ctv/addbank" method="post" class="quick-view-product">
 				<div class="block block-rounded block-themed bg-white block-transparent mb-0">
 					<div class="block-header bg-primary-dark">
 						<h3 class="block-title">Tài khoản ngân hàng</h3>
@@ -239,7 +239,7 @@ $('body').on('click', '.change_bank', function(){
 $('body').on('click', '[data-bank-default]', function(){
     let id = $(this).data('bank-default');
     let that = $(this);
-    $.post("/ctv/rut-tien/", {change_bank_default: 1, id}, function(kq){
+    $.post("/ctv/addbank/", {change_bank_default: 1, id}, function(kq){
         if(kq.success==1){
             $('.w_bank_info').html(kq.content);
             $('[data-bank-default]').addClass('btn-secondary').removeClass('btn-primary');
