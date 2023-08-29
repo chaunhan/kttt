@@ -30,9 +30,7 @@ router.post('/user/edit/:id', async (req,res) => {
         console.log(error);
     }
 });
-router.get("/admin", async (req,res) => {
-    res.render("./login/admin.ejs");
-})
+
 router.get("/user/delete/:id" , async (req,res) => {
     try {
         const u= await umodel.findByIdAndDelete(req.params.id, req.body)

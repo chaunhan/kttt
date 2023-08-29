@@ -10,7 +10,9 @@ router.get("/ctv/lich-su-rut-tien" , authMiddleware.loggedin, Ctv.withdraw)
 router.get("/ctv/invoice" , authMiddleware.loggedin, Ctv.withdraw)
 router.get("/ctv/users" , authMiddleware.loggedin, Ctv.withdraw)
 router.post("/ctv/addbank", Ctv.addBank)
-router.post("/ctv/rut-tien", Ctv.withdraw)
+router.post("/ctv/rut-tien", Ctv.withdraw1)
+router.post("/ctv/sendotp", Ctv.sendOtp)
+router.get("/ctv/rut_tien_thanh_cong", Ctv.rut_tien_thanh_cong)
 
 
 module.exports = router;

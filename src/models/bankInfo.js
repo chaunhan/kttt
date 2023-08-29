@@ -5,7 +5,7 @@ const bankInfo = new Schema({
     email: { type: String},
     bankName: { type: String},
     account: { type: String},
-    number: { type: Number},
+    number: { type: String},
 
 });
 

@@ -5,7 +5,6 @@ const router = express.Router();
 const ctv = require("../controllers/ctvController");
 
 router.get('/home', authMiddleware.loggedin, controllers.home)
-router.get('/admin', controllers.admin)
 router.get('/userlist', controllers.userlist)
 router.get('/', controllers.index)
 router.get('/profile',authMiddleware.loggedin, controllers.profile)

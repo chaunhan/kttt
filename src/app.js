@@ -13,6 +13,7 @@ const cController = require("./routes/cRoute");
 const uController = require("./routes/uRoute");
 const authRotes = require("./routes/aRouth");
 const ctvRoute = require("./routes/ctvRoute");
+const adminRoute = require("./routes/adRoute");
 
 
 //// kết nối CSDL/////
@@ -63,6 +64,7 @@ app.use(cController);
 app.use(uController);
 app.use(authRotes);
 app.use(ctvRoute);
+app.use(adminRoute);
 app.use(function(req,res,next){
     if (req.user) {
         res.locals.user = req.user;

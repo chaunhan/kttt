@@ -2,10 +2,6 @@ const cmodel = require("../models/course");
 const umodel = require("../models/user");
 const authMiddleware = require("../middlewares/auth.middlewares");
 
-const admin =  async (req,res) => {
-    res.render("./login/admin.ejs", {
-    });
-}
 const home = async (req,res) => {
     const user = req.session.user;
     console.log(user)
@@ -72,7 +68,6 @@ const updateprofile = async (req, res) => {
 
 
 module.exports = {
-    admin,
     home,
     userlist,
     index,

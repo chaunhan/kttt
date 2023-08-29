@@ -1,0 +1,16 @@
+<%- include('../layouts/headeradmin'); -%>
+<div>
+<h2>Update Trạng Thái Chuyển Khoản</h2>
+<form action="/admin/lenh-rut-tien/xuly/<%= request._id %>" method="POST">
+
+  <div class="mb-3">
+    <input type="hidden" name="id" value="<%= request._id %>" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Trạng Thái</label>
+    <input type="input" value="<%= request.isCheck %>" class="form-control" name="isCheck" />
+  </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>
+</div>

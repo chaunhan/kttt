@@ -1,0 +1,37 @@
+<%- include('../layouts/headeradmin') -%>
+
+<a href="#" class="btn btn-infor">Quản Lý Rút tiền</a>
+<table class="table table-success">
+<thead class="table-primary">
+<tr>
+<th scope="col">#</th>
+<th scope="col">Email</th>
+<th scope="col">Tiền Muốn Rút</th>
+<th scope="col">Ngân Hàng</th>
+<th scope="col">Tên Chủ Thẻ</th>
+<th scope="col">STK</th>
+<th scope="col">Ngày Tạo</th>
+
+<th scope="col">Trạng Thái</th>
+<th scope="col">Action</th>
+</tr>
+</thead>
+<tbody>
+    <% for(var i = 0; i < request_ar.length; i++) { %>
+<tr>
+<td scope="col">#</td>
+<td scope="col"><%= request_ar[i].email %></td>
+<td scope="col"><%= request_ar[i].tienrut %></td>
+<td scope="col"><%= request_ar[i].bankName %></td>
+<td scope="col"><%= request_ar[i].bankAcc %></td>
+<td scope="col"><%= request_ar[i].bankNumber %></td>
+<td scope="col"><%= request_ar[i].CreateAt %></td>
+<td scope="col"><%= request_ar[i].isCheck %></td>
+<td>
+<a href="/admin/lenh-rut-tien/xuly/<%= request_ar[i]._id %>" class="btn btn-info btn-sm">
+Sửa</a>
+</td>
+</tr>
+<% } %>
+</tbody>
+</table>
