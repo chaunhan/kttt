@@ -31,7 +31,7 @@ const register = async (req,res) => {
             const cre = await User.create(s)
             try {
                 cre
-                    res.redirect("/login")
+                    res.redirect("/dangnhap")
             } catch (error) {
                 console.log(error)
             }

@@ -8,8 +8,14 @@ const create = (req,res) => {
 }
 
 const withdraw = async (req,res) => {
-    const bankinfo = BankInfor.findOne({email: req.session.user.email})
-    res.render('./ctv/with-draw', {user: req.session.user, bankinfo: bankinfo})
+    await BankInfor.findOne({email: req.session.user.email}).then((bi) => {
+        if(bi){
+            console.log(bi)
+            res.render('./ctv/with-draw', {user: req.session.user, bankinfo: bi.toJSON()})
+        } else {
+            res.render('./ctv/with-draw-err', {user: req.session.user})
+        }
+    })
 }
 
 const tradeHistory = async (req,res) => {
@@ -39,9 +45,11 @@ const addBank = async (req,res) => {
         account : s.account,
         number : s.number
     })
+    console.log(bankInfo)
     const cre = await BankInfor.create(bankInfo);
     try{
         cre
+        res.redirect("/ctv/rut-tien")
     }catch (e){
         console.log(e)
     }

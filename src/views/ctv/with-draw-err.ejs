@@ -28,16 +28,8 @@
                                         <fieldset class="form-group">
                                             <label for="address">Tài khoản ngân hàng <span class="error">*</span></label>
                                             <div class="bank_info">
-                                                <div class="w_bank_info mt-2">
-                                                    <input type="hidden" name="bank_name" value="<%= bankinfo.bankName %>"></input>
-                                                    <input type="hidden" name="bank_account" value="<%= bankinfo.account %>"></input>
-                                                    <input type="hidden" name="bank_number" value="<%= bankinfo.number %>"></input>
-                                                    <div>
-                                                        <b class="d-block"><%= bankinfo.bankName %></b>
-                                                        <b class="d-block"><%= bankinfo.account %></b>
-                                                        <b class="d-block"><%= bankinfo.number %></b>
-                                                    </div>
-                                                    <button type="button" class="web_button btn btn-warning change_bank btn-sm"><i class="fa-solid fa-pen-to-square"></i> Đổi tài khoản</button>
+                                                <div class="mt-2">
+                                                    <button type="button" class="btn btn-primary push btn-sm" data-bs-toggle="modal" data-bs-target="#bank_modal">Thêm tài khoản</button>
                                                     </div>
                                             </div>
                                             <span class="error error_bank text-danger"></span>
@@ -212,7 +204,7 @@ $('body').on('submit', '#bank_modal form',function(){
     if(!error){
         button.attr('disabled', true);
         button.html('<i class="fas fa-spinner fa-spin mr-1"></i> Thêm');
-        $.post("/ctv/addbank/", {create: $(this).serialize()}, function(kq){
+        $.post("/ctv/addbank", {create: $(this).serialize()}, function(kq){
             console.log(kq);
             button.html('Thêm');
             button.attr('disabled', false);
@@ -230,7 +222,7 @@ $('body').on('submit', '#bank_modal form',function(){
 //thay doi ngan hang
 $('body').on('click', '.change_bank', function(){
     $('#bank_list_modal').modal('show');
-    $.post("/ctv/addbank/", {}, function(kq){
+    $.post("/ctv/addbank", {}, function(kq){
         $('#bank_list_modal .modal-body').html(kq);
         $('#bank_list_modal').css('display', 'block');
     });
@@ -239,7 +231,7 @@ $('body').on('click', '.change_bank', function(){
 $('body').on('click', '[data-bank-default]', function(){
     let id = $(this).data('bank-default');
     let that = $(this);
-    $.post("/ctv/rut-tien/", {change_bank_default: 1, id}, function(kq){
+    $.post("/ctv/addbank", {change_bank_default: 1, id}, function(kq){
         if(kq.success==1){
             $('.w_bank_info').html(kq.content);
             $('[data-bank-default]').addClass('btn-secondary').removeClass('btn-primary');
