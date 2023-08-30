@@ -1,0 +1,53 @@
+<%- include('../layouts/headerlogin'); -%>
+<main id="main-container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="block-content block-content-full">
+            <h2>Thông tin chuyển khoản</h2>
+          <span class="text">Ngân hàng thụ hưởng</span>
+          <div class="input-group mb-3">
+          <input readonly="" type="text" class="form-control" value="VP Bank">
+          <button class="btn btn-outline-secondary copy-btn" type="button" id="button-addon2"><i class="far fa-file"></i></button>
+        </div>
+        <span class="text">Số tài khoản</span>
+        <div class="input-group mb-3">
+          <input readonly="" type="text" class="form-control" value="9666886889">
+          <button class="btn btn-outline-secondary copy-btn" type="button" id="button-addon2"><i class="far fa-file"></i></button>
+        </div>
+        
+        <span class="text">Chủ tài khoản</span>
+        <div class="input-group mb-3">
+          <input readonly="" type="text" class="form-control" value="Nguyễn Quang Nam">
+          <button class="btn btn-outline-secondary copy-btn" type="button" id="button-addon2"><i class="far fa-file"></i></button>
+        </div>
+        
+        <span class="text">Số tiền</span>
+        <div class="input-group mb-3">
+          <input readonly="" type="text" class="form-control" value="297,000 VNĐ">
+          <button class="btn btn-outline-secondary copy-btn" type="button" id="button-addon2"><i class="far fa-file"></i></button>
+        </div>
+        
+        <span class="text">Nội dung</span>
+        <div class="input-group mb-3">
+          <input readonly="" type="text" class="form-control" value="KTTT<%- id %>">
+          <button class="btn btn-outline-secondary copy-btn" type="button" id="button-addon2"><i class="far fa-file"></i></button>
+        </div>
+        </div>
+      </div>
+      
+      <!-- Cụm alert sẽ được hiển thị giữa màn hình -->
+        <div id="copyAlert" class="alert alert-success dark" role="alert">
+            <a href="#">Đã sao chép</a>
+        </div>
+        
+      <div class="col-lg-4">
+        <div class="block-content block-content-full mt-2">
+          <div class="alert alert-warning">
+            <h4 class="alert-heading">Lưu ý</h4>
+            <p class="mb-0">Bạn phải chuyển khoản chính xác theo hướng dẫn, bao gồm nội dung tham chiếu chính xác như trên. Nếu có bất kỳ sai sót nào, giao dịch nạp VND của bạn có thể không thực thi được.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+<%- include('../layouts/footer'); -%>

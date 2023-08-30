@@ -6,8 +6,8 @@ var a = today.toISOString().substring(0, 10);
 
 const course = new Schema({
     TenCourse: { type: String},
-    GiaCourse: { type: String},
-    GiaGoc: {type: String},
+    GiaCourse: { type: Number},
+    GiaGoc: {type: Number},
     SlBai: { type:String},
     DesSP: {type : String},
     ImgSP: {type: String},

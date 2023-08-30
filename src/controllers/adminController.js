@@ -1,5 +1,6 @@
 
 const reqWithdraw = require ('../models/reqRutTien')
+const reqMua = require ('../models/reqmua')
 const User = require('../models/user');
 const authMiddleware = require("../middlewares/auth.middlewares");
 
@@ -80,11 +81,58 @@ const editMoney = async (req,res) => {
 }
 
 
+const checkMua = async (req, res) => {
+    reqMua.find({}).then((request_ar) => {
+        console.log(request_ar)
+        res.render('./admin/checkMuaCpanel.ejs' , {
+            request_ar : request_ar.map(s=>s.toJSON()),
+        })
+    });
+}
+
+const trangEditTtMua = async function (req, res) {
+    console.log(req.params.id);
+    await umodel.findById(req.params.id).then((user) => {
+        if (user) {
+            console.log(user);
+            res.render("./login/updateUser.ejs", {
+            user: user.toJSON(),
+          });
+        } else {
+          console.log("loi");
+        }
+      });
+    }
+
+const editTtMua = async (req,res) => {
+    const doiTrangThai = ({
+        isCheck : "true"
+    })
+    const a =  await reqMua.findByIdAndUpdate(req.params.id,doiTrangThai);
+    try {
+        a
+        console.log("Check Trạng Thái",doiTrangThai);
+        console.log("id" , req.params.id)
+        b = await reqMua.findById(req.params.id)
+        c = await User.findOne({email: b.email})
+        const ActiveKhoaHoc = ({
+            cDaMua : "Học Làm Gà"
+        })
+        d = await User.findByIdAndUpdate(c._id,ActiveKhoaHoc);
+        res.redirect('/admin/lenh-mua-khoa-hoc')
+    } catch (error) {
+        res.status(500).send(error);
+        console.log(error);
+    }
+}
+
 
 module.exports = {
     create,
     withdrawCpanel,
     edit,
     editpost,
-    editMoney
+    editMoney,
+    checkMua,
+    editTtMua
 }

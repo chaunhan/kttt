@@ -44,12 +44,4 @@ router.get("/user/delete/:id" , async (req,res) => {
         console.log(error);
     }
 })
-
-router.get('/userlist', (req,res) => {
-    umodel.find({}).then((user_ar) => {
-        res.render('./login/userlist.ejs' , {
-            user_ar : user_ar.map(s=>s.toJSON()),
-        })
-    });
-});
 module.exports=router;

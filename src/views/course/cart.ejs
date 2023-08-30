@@ -1,0 +1,71 @@
+<%- include('../layouts/headerlogin'); -%>
+
+<main id="main-container">
+    <div class="content">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="block block-rounded">
+                    <div class="block-content block-content-full">
+                        <table class="table table-borderless table-striped table-hover mb-0">
+                            <tbody class="cart_item">
+                                                                                                                        <tr>
+                                        <td class="text-center" style="width: 150px;">
+                                            <img class="img-fluid" src="/upload/course/2023/07/05/khoa-hoc-769252.jpg">
+                                        </td>
+                                        <td class="align-middle">
+                                            <h5 class="mb-0 text-cart">Giải Pháp Kiếm Tiền Trên TikTok Thu Nhập Từ 20Triệu/Tháng</h5>
+                                            <p class="mb-0"></p>
+                                        </td>
+                                        <td class="align-middle">
+                                            <h5 class="text-danger mb-0 text-nowrap"><%- giatien %></h5>
+                                        </td>
+                                        <td class="text-center align-middle" style="width: 40px;">
+                                            <button class="btn btn-sm btn-alt-danger btn-circle remove_cart" data-id="1"><i class="far fa-trash-can"></i></button>
+                                        </td>
+                                    </tr>
+                                                                                                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+                                <div class="col-md-4">
+                <div class="block block-rounded">
+                    <div class="block-header">
+                        <h3 class="block-title font-w700">Giá trị đơn hàng</h3>
+                    </div>
+                    <div class="block-content block-content-full">
+                        <table class="table table-borderless table-striped table-hover mb-0">
+                            <tbody>
+                                <tr>
+                                    <td class="align-middle">
+                                        <h4 class="mb-0">Tổng cộng</h4>
+                                    </td>
+                                    <td class="text-right align-middle">
+                                        <h4 class="text-danger cart_total mb-0"><%- giatien %></h4>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="row mt-3">
+                          <div class="col-12">
+                          <form action="/guiLenhMua" method="post">
+                            <input type="hidden" value="<%- info.GiaCourse %>" name="GiaCourse">
+                            <input type="hidden" value="<%- user.email %>" name="email">
+                            <input type="hidden" value="<%- info.id %>" name="_id">
+                            <button type="submit" class="p-3 w-100 btn btn-primary checkout btn-lg btn-block">
+                                  <h4 class="mb-0 text-white">
+                                    <i class="far fa-money-bill-1"></i> Thanh toán
+                                  </h4>
+                            </button>
+                            </form>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                            </div>
+    </div>
+    
+</main>
+
+<%- include('../layouts/footer'); -%>

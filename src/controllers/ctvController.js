@@ -18,19 +18,20 @@ const create = (req,res) => {
     const a = User.findOne({email: req.session.user.email }).then ((user) => {
         const tien = VND.format(user.tien)
         
-        const refinTong = user.refin ;
+        const refinTong = user._id ;
         console.log(refinTong)
         //////// tổng người tuyến dưới/////
         User.find({}).then((user1) => {
             var TongUserTuyenDuoi = 0;
-            var tam =0;
+            
             console.log(user1, " USER")
             for ( var i = 0; i < user1.length ; i++) {
                 if (user1[i].ref == refinTong) {
-                    tam++;
+                    var tam =0;
+                    tam = tam + 1;
                     TongUserTuyenDuoi = TongUserTuyenDuoi + tam
                 }
-                console.log(tam, " Bộ Đếm")
+                console.log(TongUserTuyenDuoi, " Bộ Đếm")
             }
             console.log(TongUserTuyenDuoi, "Tổng Tuyến Dưới")
             const rutHistory = reqWithdraw.find({email: req.session.user.email}).then((request_ar) => {
@@ -83,7 +84,7 @@ const invoice = async (req, res) => {
 }
 const users = async (req,res) => {
     const a = User.findOne({email: req.session.user.email }).then ((user) => {
-        const refinTong = user.refin ;
+        const refinTong = user._id ;
 
         //////// tổng người tuyến dưới/////
         User.find({}).then((user1) => {

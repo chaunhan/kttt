@@ -1,5 +1,8 @@
 const authMiddleware = require("../middlewares/auth.middlewares");
 const Course = require('../models/course');
+const User = require('../models/user');
+const Cart = require('../models/cart');
+const ReqMua = require('../models/reqmua')
 
 const create = (req,res) => {
     Course.find({}).then((sp_ar) => {
@@ -63,15 +66,26 @@ const deleteCourse = async (req, res) => {
 
 const courseDetail = async (req, res) => {
     const courseID = req.params.TenCourse
-    console.log(courseID);
-    await Course.findOne({TenCourse : courseID}).then((course) => {
-        console.log(course)
-        res.render("./course/course-detail.ejs", {
-            user: req.session.user,
-            course: course
-        })
-      });
-    
+    const check = await User.findOne({email: req.session.user.email})
+    if (check.cDaMua == courseID) {
+        console.log(courseID);
+        await Course.findOne({TenCourse : courseID}).then((course) => {
+            console.log(course)
+            res.render("./course/course-detail.ejs", {
+                user: req.session.user,
+                course: course
+            })
+          });
+    } else {
+        await Course.findOne({TenCourse : courseID}).then((course) => {
+            console.log(course)
+            res.render("./course/cdetail-unactice.ejs", {
+                user: req.session.user,
+                course: course
+            })
+          });
+        
+    }   
 }
 
 const courseDetail1 = async (req, res) => {
@@ -87,6 +101,51 @@ const courseDetail1 = async (req, res) => {
     
 }
 
+let VND = new Intl.NumberFormat('vi-VN', {
+    style: 'currency',
+    currency: 'VND'
+});
+
+const addcart = async (req,res) => {
+    const info = new Cart({
+        id : req.session.user._id,
+        TenCourse : req.body.TenCourse,
+        GiaCourse : req.body.GiaCourse
+    })
+    console.log(info)
+    const tien = VND.format(info.GiaCourse)
+    const cre = await Cart.create(info);
+    try{
+        cre
+        res.render('./course/cart.ejs' ,{giatien: tien , user: req.session.user , info : info})
+    } catch (e) {
+        console.log(e)
+    }
+}
+
+const muaCoure = async (req,res) => {
+    const user = req.session.user 
+    id = user._id
+
+    res.render('./course/muaCourse.ejs', {user : user , id: id})
+}
+const guilenhMua = async (req,res) => {
+    const {email , _id, GiaCourse} = req.body
+    console.log(email , _id, GiaCourse)
+    const info = new ReqMua({
+        email: email,
+        id: _id,
+        gia: GiaCourse
+    })
+    const cre = await ReqMua.create(info)
+    try {
+        cre
+        res.redirect("/thanhtoan")
+    } catch (e) {
+        console.log(e)
+    }
+}
+
 module.exports = {
     create,
     themCourse,
@@ -94,5 +153,8 @@ module.exports = {
     edit,
     deleteCourse,
     courseDetail,
-    courseDetail1
+    courseDetail1,
+    addcart,
+    muaCoure,
+    guilenhMua
 }
