@@ -37,7 +37,7 @@
                                                         <b class="d-block"><%= bankinfo.account %></b>
                                                         <b class="d-block"><%= bankinfo.number %></b>
                                                     </div>
-                                                    <button type="button" class="web_button btn btn-warning change_bank btn-sm"><i class="fa-solid fa-pen-to-square"></i> Đổi tài khoản</button>
+                                                    <button type="submit" formmethod="post" formaction="/ctv/xoaBank" class="web_button btn btn-warning change_bank btn-sm"><i class="fa-solid fa-pen-to-square"></i> Đổi tài khoản</button>
                                                     </div>
                                             </div>
                                             <span class="error error_bank text-danger"></span>
@@ -65,8 +65,27 @@
                                                 <button type="submit" formmethod="post" formaction="/ctv/sendotp"class="btn send_otp"data-type="withdraw">Nhận OTP</button>
                                             </div>
                                         </div>
-                                                                                </fieldset>
-                                    <div class="mt-5 mb-5 row justify-content-center">
+										<div class="mt-2 mb-0 row justify-content-center mt-2 border-0">
+											<div class="col-7">
+												<div class="alert alert-warning" role="alert">    
+												<p class="mb-0" style="text-align: center;">Hãy kiểm tra kỹ đôi khi email OTP sẽ bị đưa vào mục thư rác</p>
+												</div>
+											</div>
+										</div>
+                                    </fieldset>
+                                    <div class="mt-0 mb-5 row justify-content-center">
+										<% if(conflictError == null) { %>
+											<div></div>
+										<% } %>
+										<% if(conflictError != null) { %>
+											<div class="mb-5 row justify-content-center">
+												<div class="row-3">
+													<div class="alert alert-danger" role="alert">    
+													<p class="mb-0" style="text-align: center;"><%= conflictError %></p>
+												</div>
+											</div>
+										</div>
+										<% } %>
                                         <div class="col-sm-3">
                                             <button class="w-100 btn btn-primary " type="submit"> Rút tiền</button>
                                         </div>
@@ -172,7 +191,7 @@
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
-<!-- <script>
+<script>
     function set_time(that) {
 	var minutes = 1;
 	var target_date = new Date().getTime() + minutes * 60 * 1000;
@@ -279,7 +298,7 @@ $('body').on('click', '.send_otp', function () {
 	});
 });
 
-</script> -->
+</script>
 <script>
 //close modal
 $('body').on('click', '[data-dismiss=modal]', function(){

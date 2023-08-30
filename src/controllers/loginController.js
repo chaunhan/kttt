@@ -4,17 +4,19 @@ const bcrypt = require('bcrypt');
 require('dotenv/config');
 
 const dangnhap = (req, res) => {
-    res.render('./login/dangnhap.ejs');
+    conflictError = null;
+    res.render('./login/dangnhap.ejs', conflictError);
 }
 
 const login = async (req,res) => {
-    try {
-        const { email, pass} = req.body;
+    const { email, pass} = req.body;
 
     if (email && pass) {
         const check = await User.findOne({ email: email});
-        console.log(check.pass);
-        console.log(pass)
+        if(check === null) {
+            const conflictError = 'Sai tài khoản hoặc mật khẩu.';
+            res.render('./login/dangnhap.ejs', { email, pass, conflictError});
+        } else {
         const comparePassword = bcrypt.compareSync(pass, check.pass);
         console.log(comparePassword , "asd")
                 if (comparePassword == true) {
@@ -22,17 +24,14 @@ const login = async (req,res) => {
                     req.session.user = check;
                     res.redirect('/home');
                 } else {
-                    const conflictError = 'LỖI';
+                    const conflictError = 'Sai tài khoản hoặc mật khẩu.';
                     res.render('./login/dangnhap.ejs', {email, pass, conflictError});
                 }
-        } else {
-        const conflictError = 'NGƯỜI DÙNG ĐÃ TỒN TẠI.';
-    res.render('./login/dangky', { email, pass, conflictError});
+        }
+    } else {
+        const conflictError = 'Sai tài khoản hoặc mật khẩu.';
+        res.render('./login/dangnhap.ejs', { email, pass, conflictError});
     }
-    } catch (error) {
-        console.log(error)
-    }
-    
 }
 
 const logout = (req, res) => {

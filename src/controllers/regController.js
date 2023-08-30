@@ -3,13 +3,14 @@ const bcrypt = require('bcrypt');
 require('dotenv/config');
 
 const create = (req, res) => {
-    res.render('./login/dangky.ejs');
+    const conflictError = null;
+    res.render('./login/dangky.ejs' , {conflictError: conflictError});
 }
 
 const register = async (req,res) => {
     const { email, pass, ten , ref} = req.body;
 
-    if (email && pass && ten && ref) {
+    if (email && pass && ten) {
         const check = await User.findOne({ email: email});
         check, (err, user) => {
             if ( err || user) {
@@ -37,7 +38,7 @@ const register = async (req,res) => {
             }
         })
     } else {
-        const conflictError = 'NGƯỜI DÙNG ĐÃ TỒN TẠI.';
+        const conflictError = 'Xin hãy nhập đầy đủ những thông tin như email, password và tên.';
     res.render('./login/dangky', { email, pass, ten, ref, conflictError});
     }
 }

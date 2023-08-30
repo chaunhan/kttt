@@ -49,20 +49,25 @@ const create = (req,res) => {
 }
 
 const withdraw = async (req,res) => {
+    const conflictError = null;
     const tien = VND.format(req.session.user.tien)
     console.log(tien)
     await BankInfor.findOne({email: req.session.user.email}).then(async (bi) => {
         if(bi){
             console.log(bi)
-            res.render('./ctv/with-draw', {user: req.session.user, bankinfo: bi.toJSON(), tien: tien})
+            res.render('./ctv/with-draw', {user: req.session.user, bankinfo: bi.toJSON(), tien: tien, conflictError })
         } else {
-            res.render('./ctv/with-draw-err', {user: req.session.user, tien: tien})
+            res.render('./ctv/with-draw-err', {user: req.session.user, tien: tien, conflictError })
         }
     })
 }
 
 const tradeHistory = async (req,res) => {
-
+    reqWithdraw.find({email: req.session.user.email}).then((request_ar) => {
+        res.render("./ctv/tradeHistory.ejs" , {
+            request_ar : request_ar.map(s=>s.toJSON()),
+        })
+    });
 }
 
 const withdrawHistory = async (req, res) => {
@@ -97,7 +102,6 @@ const users = async (req,res) => {
 const sendOtp = async (req,res) => {
     const email = req.session.user.email
     await EmailController.sendEmailCreateOrder(email,emailOtp)
-    console.log(emailOtp)
 }
 
 const addBank = async (req,res) => {
@@ -122,32 +126,62 @@ const addBank = async (req,res) => {
     }
 }
 
+const xoaBank = async (req,res) => {
+    const s = req.body;
+    console.log(s)
+    const email = req.session.user.email;
+
+    console.log(s)
+    try {
+        const u= await BankInfor.findOneAndDelete({email: email})
+        if(!u){
+            res.send("USER CHƯA CÓ BANK")
+        }else{
+            res.redirect("/ctv/rut-tien")
+        }
+    }catch (e){
+        console.log(e)
+    }
+}
+
 const withdraw1 = async (req, res) => {
     const {phone_otp, amount} = req.body
     console.log(amount)
-    if(emailOtp == phone_otp){
-        await BankInfor.findOne({email: req.session.user.email }).then(async (bankI4) => {
-            const request = new reqWithdraw({
-                ten: req.session.user.name,
-                email: req.session.user.email,
-                tienrut: amount,
-                bankName: bankI4.bankName,
-                bankAcc: bankI4.account,
-                bankNumber: bankI4.number
-            });
-            console.log(request)
-            const cre = await reqWithdraw.create(request)
-            try {
-                cre
-                    res.redirect("/ctv/rut_tien_thanh_cong")
-            } catch (error) {
-                console.log(error)
-            }
-        })
+    const tien = VND.format(req.session.user.tien)
+    console.log(tien)
+
+    if (phone_otp && amount) {
+        if(emailOtp == phone_otp){
+            await BankInfor.findOne({email: req.session.user.email }).then(async (bankI4) => {
+                const request = new reqWithdraw({
+                    ten: req.session.user.name,
+                    email: req.session.user.email,
+                    tienrut: amount,
+                    bankName: bankI4.bankName,
+                    bankAcc: bankI4.account,
+                    bankNumber: bankI4.number
+                });
+                console.log(request)
+                const cre = await reqWithdraw.create(request)
+                try {
+                    cre
+                        res.redirect("/ctv/rut_tien_thanh_cong")
+                } catch (error) {
+                    console.log(error)
+                }
+            })
+        }else {
+            await BankInfor.findOne({email: req.session.user.email }).then(async (bankI4) => {
+                const conflictError = 'OTP không hợp lệ.';
+                res.render('./ctv/with-draw.ejs', {user: req.session.user, bankinfo: bankI4.toJSON() , conflictError , tien: tien});
+            })
+        }
     }else {
-
+        await BankInfor.findOne({email: req.session.user.email }).then(async (bankI4) => {
+            const conflictError = 'Số tiền muốn rút hoặc mã OTP không hợp lệ.';
+            res.render('./ctv/with-draw.ejs', {user: req.session.user, bankinfo: bankI4.toJSON(), conflictError, tien: tien});
+        })
     }
-
 }
 
 const rut_tien_thanh_cong = async (req, res) => {
@@ -162,6 +196,7 @@ module.exports = {
     invoice,
     users,
     addBank,
+    xoaBank,
     withdraw1,
     sendOtp,
     rut_tien_thanh_cong

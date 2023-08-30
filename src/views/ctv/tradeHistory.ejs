@@ -1,13 +1,14 @@
 <%- include('../layouts/headerlogin') %>
-    <main id="main-container">
+
+<main id="main-container">
         <div class="bg-body-light">
             <div class="content content-full">
                 <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
-                    <h1 class="flex-grow-1 fs-3 fw-semibold my-2 my-sm-3">Lịch sử rút tiền</h1>
+                    <h1 class="flex-grow-1 fs-3 fw-semibold my-2 my-sm-3">Doanh thu</h1>
                     <nav class="flex-shrink-0 my-2 my-sm-0 ms-sm-3" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/ctv">Cộng tác viên</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Lịch sử rút tiền</li>
+                            <li class="breadcrumb-item active" aria-current="page">Doanh thu</li>
                         </ol>
                     </nav>
                 </div>
@@ -17,7 +18,7 @@
             <div class="block block-rounded block-mode-loading-refresh">
                 <div class="block-header block-header-default">
                     <h3 class="block-title">
-                        Lịch sử rút tiền
+                        Doanh sách
                     </h3>
                     <div class="block-options">
                         <a href="/ctv/lich-su-rut-tien" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
@@ -33,20 +34,14 @@
                                 <th>ID</th>
                                 <th>Số tiền</th>
                                 <th>Trạng thái</th>
-                                <th>Ngày rút</th>
+                                <th>Ngày</th>
                             </tr>
                             </thead>
                             <tbody>
-                                <% for(var i = 0; i < request_ar.length; i++) { %>
-                            <tr>
-                                
-                                <th colspan="1"><%= request_ar[i].email %></th>
-                                <th colspan="1"><%= request_ar[i].tienrut %></th>
-                                <th colspan="1"><%= request_ar[i].isCheck %></th>
-                                <th colspan="1"><%= request_ar[i].CreateAt %></th>
-
+                                                        <tr>
+                                <td colspan="7" class="text-center">
+                                    Không có dữ liệu.                                </td>
                             </tr>
-                            <% } %>
                                                         </tbody>
                         </table>
                     </div>
@@ -61,6 +56,3 @@
             </div>
         </div>
     </main>
-
-
-<%- include('../layouts/footer'); -%>

@@ -94,6 +94,18 @@ height: 100%;
                   </span>
               </div>
           </div>
+          <% if(conflictError == null) { %>
+            <div></div>
+        <% } %>
+        <% if(conflictError != null) { %>
+            <div class="mb-4">
+                <div class="input-group input-group-lg">
+                    <div class="alert alert-danger" role="alert">    
+                    <p class="mb-1"><%= conflictError %></p>
+                </div>
+            </div>
+        </div>
+        <% } %>
           <div class="d-sm-flex justify-content-sm-between align-items-sm-center text-sm-start mb-4">
               <div class="form-check d-flex gap-1 text-start">
                   <input type="checkbox" class="form-check-input" id="remember_me" name="remember_me" checked="">
