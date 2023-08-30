@@ -3,14 +3,46 @@
 <h2>Update Trạng Thái Chuyển Khoản</h2>
 <form action="/admin/lenh-rut-tien/xuly/<%= request._id %>" method="POST">
 
+
+
   <div class="mb-3">
-    <input type="hidden" name="id" value="<%= request._id %>" />
+    <label class="form-label">Tiền Muốn Rút: <%= tienrut %></label>
+    <input type="hidden" value="<%= tienrut %>" class="form-control" name="tienrut1" />
   </div>
+
+  <div class="mb-3">
+    <label class="form-label">Tiền Hiện có: <%= tien %></label>
+    <input type="hidden" value="<%= tien %>" class="form-control" name="tien1" />
+  </div>
+
   <div class="mb-3">
     <label class="form-label">Trạng Thái</label>
     <input type="input" value="<%= request.isCheck %>" class="form-control" name="isCheck" />
   </div>
-  </div>
+
   <button type="submit" class="btn btn-primary">Update</button>
 </form>
+
+<form action="/admin/updateMoney" method="post">
+  <div class="mb-3">
+    <input type="hidden" name="email" value="<%= request.email %>" />
+  </div>
+    <div class="mb-3">
+      <label class="form-label">Update Tiền</label>
+    </div>
+    <div class="mb-3">
+      <input type="hidden" value="<%= request.isCheck %>" class="form-control" name="isCheck" />
+    </div>
+    <div class="mb-3">
+      <input type="hidden" value="<%= request.tienrut %>" class="form-control" name="tienrut1" />
+    </div>
+  
+    <div class="mb-3">
+      <input type="hidden" value="<%= user.tien %>" class="form-control" name="tien1" />
+    </div>
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary">Update Tiền Cho Người Dùng Sau Khi Duyệt Rút</button>
+    </div>
+</form>
+
 </div>
