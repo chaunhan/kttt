@@ -4,6 +4,7 @@ const BankInfor = require('../models/bankInfo');
 const reqWithdraw = require ('../models/reqRutTien')
 const EmailController = require('./EmailController');
 const reqRutTien= require('./adminController');
+const { request } = require("express");
 
 
 let VND = new Intl.NumberFormat('vi-VN', {
@@ -14,11 +15,37 @@ let VND = new Intl.NumberFormat('vi-VN', {
 const emailOtp = Math.floor(Math.random() * 90000) + 10000;
 
 const create = (req,res) => {
-    const tien = VND.format(req.session.user.tien)
-    console.log(tien)
-    res.render('./ctv/index.ejs', {user: req.session.user, tien : tien});
-
-
+    const a = User.findOne({email: req.session.user.email }).then ((user) => {
+        const tien = VND.format(user.tien)
+        
+        const refinTong = user.refin ;
+        console.log(refinTong)
+        //////// tổng người tuyến dưới/////
+        User.find({}).then((user1) => {
+            var TongUserTuyenDuoi = 0;
+            var tam =0;
+            console.log(user1, " USER")
+            for ( var i = 0; i < user1.length ; i++) {
+                if (user1[i].ref == refinTong) {
+                    tam++;
+                    TongUserTuyenDuoi = TongUserTuyenDuoi + tam
+                }
+                console.log(tam, " Bộ Đếm")
+            }
+            console.log(TongUserTuyenDuoi, "Tổng Tuyến Dưới")
+            const rutHistory = reqWithdraw.find({email: req.session.user.email}).then((request_ar) => {
+                var tiendarut = 0;
+                for ( var i= 0 ; i  < request_ar.length; i++) {
+                    if(request_ar[i].isCheck == "true") {
+                        tiendarut = request_ar[i].tienrut + tiendarut
+                    }
+                    
+                }
+                console.log(tiendarut)
+                res.render('./ctv/index.ejs', {user: req.session.user, tien : tien, tiendarut: VND.format(tiendarut), tongTuyenDuoi : TongUserTuyenDuoi});
+            });
+        })
+    })
 }
 
 const withdraw = async (req,res) => {
@@ -39,14 +66,32 @@ const tradeHistory = async (req,res) => {
 }
 
 const withdrawHistory = async (req, res) => {
-
+    reqWithdraw.find({email: req.session.user.email}).then((request_ar) => {
+        res.render("./ctv/withdrawHistory.ejs" , {
+            request_ar : request_ar.map(s=>s.toJSON()),
+        })
+    });
 }
 
 const invoice = async (req, res) => {
 
 }
 const users = async (req,res) => {
+    const a = User.findOne({email: req.session.user.email }).then ((user) => {
+        const refinTong = user.refin ;
 
+        //////// tổng người tuyến dưới/////
+        User.find({}).then((user1) => {
+            var ListUserTuyenDuoi = [];
+            for ( var i = 0; i < user1.length ; i++) {
+                if (user1[i].ref == refinTong) {
+                    ListUserTuyenDuoi.push(user1[i]);
+                }
+            }
+            console.log(ListUserTuyenDuoi, "USER TUYEN DUOI")
+            res.render('./ctv/ListUserCon.ejs', {user: req.session.user, listTuyenDuoi : ListUserTuyenDuoi});
+        })
+    })
 }
 
 const sendOtp = async (req,res) => {
