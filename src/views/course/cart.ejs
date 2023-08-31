@@ -51,7 +51,9 @@
                           <form action="/guiLenhMua" method="post">
                             <input type="hidden" value="<%- info.GiaCourse %>" name="GiaCourse">
                             <input type="hidden" value="<%- user.email %>" name="email">
-                            <input type="hidden" value="<%- info.id %>" name="_id">
+                            <input type="hidden" value="<%- info.TenCourse %>" name="TenCourse">
+                            <input type="hidden" value="<%- user.ten %>" name="ten">
+                            <input type="hidden" value="<%- user.ref %>" name="_id">
                             <button type="submit" class="p-3 w-100 btn btn-primary checkout btn-lg btn-block">
                                   <h4 class="mb-0 text-white">
                                     <i class="far fa-money-bill-1"></i> Thanh toán

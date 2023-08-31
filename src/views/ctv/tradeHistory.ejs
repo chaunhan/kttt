@@ -21,7 +21,7 @@
                         Doanh sách
                     </h3>
                     <div class="block-options">
-                        <a href="/ctv/lich-su-rut-tien" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                        <a href="/ctv/lich-su-giao-dich" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
                             <i class="si si-refresh"></i>
                         </a>
                     </div>
@@ -38,11 +38,15 @@
                             </tr>
                             </thead>
                             <tbody>
-                                                        <tr>
-                                <td colspan="7" class="text-center">
-                                    Không có dữ liệu.                                </td>
-                            </tr>
-                                                        </tbody>
+                                <% for(var i = 0; i < listTuyenDuoi.length; i++) { %>
+                                <tr class="text-uppercase">
+                                    <th>ID</th>
+                                    <th><%- listTuyenDuoi[i].hoahong %></th>
+                                    <th><%- listTuyenDuoi[i].isCheck %></th>
+                                    <th><%- listTuyenDuoi[i].CreateAt.  toDateString() %></th>
+                                </tr>
+                                <% } %>
+                            </tbody>
                         </table>
                     </div>
                     <div class="row text-nowrap" id="js_paging">

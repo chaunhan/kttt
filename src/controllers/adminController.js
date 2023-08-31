@@ -2,6 +2,7 @@
 const reqWithdraw = require ('../models/reqRutTien')
 const reqMua = require ('../models/reqmua')
 const User = require('../models/user');
+const Cart = require('../models/cart')
 const authMiddleware = require("../middlewares/auth.middlewares");
 
 
@@ -106,7 +107,8 @@ const trangEditTtMua = async function (req, res) {
 
 const editTtMua = async (req,res) => {
     const doiTrangThai = ({
-        isCheck : "true"
+        isCheck : "true",
+        hoahong : 300000/100 * 40
     })
     const a =  await reqMua.findByIdAndUpdate(req.params.id,doiTrangThai);
     try {
@@ -115,10 +117,17 @@ const editTtMua = async (req,res) => {
         console.log("id" , req.params.id)
         b = await reqMua.findById(req.params.id)
         c = await User.findOne({email: b.email})
+        f = await User.findById(b.id)
+        console.log(f.tien)
         const ActiveKhoaHoc = ({
-            cDaMua : "Học Làm Gà"
+            cDaMua : "Học Làm Gà",
         })
+        const UPDATEMONEY = ({
+            tien : f.tien + b.hoahong
+        })
+        h = await User.findByIdAndUpdate(f.id, UPDATEMONEY)
         d = await User.findByIdAndUpdate(c._id,ActiveKhoaHoc);
+        e = await Cart.findByIdAndDelete(req.params.id)
         res.redirect('/admin/lenh-mua-khoa-hoc')
     } catch (error) {
         res.status(500).send(error);

@@ -130,12 +130,14 @@ const muaCoure = async (req,res) => {
     res.render('./course/muaCourse.ejs', {user : user , id: id})
 }
 const guilenhMua = async (req,res) => {
-    const {email , _id, GiaCourse} = req.body
+    const {email , _id, GiaCourse , TenCourse, ten} = req.body
     console.log(email , _id, GiaCourse)
     const info = new ReqMua({
         email: email,
         id: _id,
-        gia: GiaCourse
+        tien: GiaCourse,
+        TenCourse: TenCourse,
+        ten: ten
     })
     const cre = await ReqMua.create(info)
     try {
