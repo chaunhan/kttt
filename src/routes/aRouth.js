@@ -12,6 +12,8 @@ router.post('/login', login.login)
 router.get('/register', authMiddleware.isAuth, register.create)
 router.post('/register', register.register)
 
+router.get('/referral/:ref', authMiddleware.isAuth, register.regCoRef)
+
 router.get('/logout', authMiddleware.loggedin, login.logout)
 
 router.get('/changepassword', authMiddleware.loggedin , cpass.create)

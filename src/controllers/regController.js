@@ -43,8 +43,14 @@ const register = async (req,res) => {
     }
 }
 
+const regCoRef = (req, res) => {
+    const conflictError = null;
+    const ref = req.params.ref
+    res.render('./login/dangkycoref.ejs' , {conflictError: conflictError, ref: ref});
+}
+
 module.exports = {
     create,
     register,
-
+    regCoRef
 }

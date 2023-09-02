@@ -10,8 +10,8 @@ router.post("/edit/:id", cController.edit)
 router.get("/deleted/:id", cController.deleteCourse)
 router.get("/detail/:TenCourse", cController.courseDetail)
 router.get("/detail/1/:TenCourse", cController.courseDetail1)
-router.post("/addcart", cController.addcart)
-router.post("/guilenhmua", cController.guilenhMua)
+router.post("/addcart", authMiddleware.loggedin, cController.addcart)
+router.post("/guilenhmua", authMiddleware.loggedin, cController.guilenhMua)
 router.get("/thanhtoan", authMiddleware.loggedin, cController.muaCoure)
 
 

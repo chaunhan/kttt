@@ -73,18 +73,19 @@ const courseDetail = async (req, res) => {
             console.log(course)
             res.render("./course/course-detail.ejs", {
                 user: req.session.user,
-                course: course
+                course: course,
+                tien: VND.format(course.GiaCourse)
             })
-          });
+        });
     } else {
         await Course.findOne({TenCourse : courseID}).then((course) => {
             console.log(course)
             res.render("./course/cdetail-unactice.ejs", {
                 user: req.session.user,
-                course: course
+                course: course,
+                tien: VND.format(course.GiaCourse)
             })
-          });
-        
+        });
     }   
 }
 
@@ -95,7 +96,8 @@ const courseDetail1 = async (req, res) => {
         console.log(course)
         res.render("./course/cdetail.ejs", {
             user: req.session.user,
-            course: course
+            course: course,
+            tien: VND.format(course.GiaCourse)
         })
       });
     

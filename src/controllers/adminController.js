@@ -3,7 +3,10 @@ const reqWithdraw = require ('../models/reqRutTien')
 const reqMua = require ('../models/reqmua')
 const User = require('../models/user');
 const Cart = require('../models/cart')
+const Admin = require('../models/admin')
 const authMiddleware = require("../middlewares/auth.middlewares");
+const bcrypt = require('bcrypt');
+require('dotenv/config');
 
 
 let VND = new Intl.NumberFormat('vi-VN', {
@@ -135,6 +138,72 @@ const editTtMua = async (req,res) => {
     }
 }
 
+const loginpage = async (req, res) => {
+    conflictError = null;
+    res.render('./login/adminlogin.ejs', conflictError);
+}
+
+
+const login = async (req,res) => {
+    const { email, pass} = req.body;
+
+    if (email && pass) {
+        const check = await Admin.findOne({ email: email});
+        if(check === null) {
+            const conflictError = 'Sai tài khoản hoặc mật khẩu.';
+            res.render('./admin/adminlogin.ejs', { email, pass, conflictError});
+        } else {
+        const comparePassword = bcrypt.compareSync(pass, check.pass);
+        console.log(comparePassword , "asd")
+                if (comparePassword == true) {
+                    req.session.Adminloggedin = true;
+                    req.session.admin = check;
+                    res.redirect('/admin');
+                } else {
+                    const conflictError = 'Sai tài khoản hoặc mật khẩu.';
+                    res.render('./login/adminlogin.ejs', {email, pass, conflictError});
+                }
+        }
+    } else {
+        const conflictError = 'Sai tài khoản hoặc mật khẩu.';
+        res.render('./login/adminlogin.ejs', { email, pass, conflictError});
+    }
+}
+
+const register = async (req,res) => {
+    const { email, pass, ten} = req.body;
+
+    if (email && pass) {
+        const check = await Admin.findOne({ email: email});
+        check, (err, user) => {
+            if ( err || user) {
+                const conflictError = 'NGƯỜI DÙNG TỒN TẠI.';
+                res.render('.login/register', { email, pass, ten, ref, conflictError})
+            }
+        }
+
+        bcrypt.hash(pass, parseInt(process.env.BCRYPT_SALT_ROUND)).then(async (hashed) => {
+            // Tạo người dùng
+            const admin = new Admin({
+                ten: ten,
+                email: email,
+                pass: hashed,
+            });
+            const s = new Admin(admin);
+            console.log(s)
+            const cre = await Admin.create(s)
+            try {
+                cre
+                    res.redirect("/admin/login")
+            } catch (error) {
+                console.log(error)
+            }
+        })
+    } else {
+        const conflictError = 'Xin hãy nhập đầy đủ những thông tin như email, password và tên.';
+    res.render('./login/dangky', { email, pass, ten, ref, conflictError});
+    }
+}
 
 module.exports = {
     create,
@@ -143,5 +212,9 @@ module.exports = {
     editpost,
     editMoney,
     checkMua,
-    editTtMua
+    editTtMua,
+    login,
+    register,
+    loginpage,
+
 }
