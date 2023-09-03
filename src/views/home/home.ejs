@@ -1,63 +1,24 @@
 <%- include('../layouts/headerlogin'); -%>
 <main id="main-container">
-    <div class="block">
-        <div class="js-slider slick-dotted-inner slick-dotted-white js-slider-enabled slick-initialized slick-slider slick-dotted" data-dots="true" data-autoplay="true" data-autoplay-speed="3000">
-            <div class="slick-list draggable">
-                <div class="slick-track" style="opacity: 1; width: 5110px; transform: translate3d(-1460px, 0px, 0px); transition: transform 500ms ease 0s;">
-                    <div class="slick-slide slick-cloned" data-slick-index="-1" id="" aria-hidden="true" tabindex="-1" style="width: 730px;">
-                        <img class="img-fluid" src="/upload/slide/2023/07/05/slide-969626.jpg" alt="">
-                    </div>
-                    <div class="slick-slide" data-slick-index="0" aria-hidden="true" tabindex="0" role="tabpanel" id="slick-slide00" aria-describedby="slick-slide-control00" style="width: 730px;">
-                        <img class="img-fluid" src="/upload/slide/2023/07/06/slide-898382.jpg" alt="">
-                    </div>
-                    <div class="slick-slide slick-current slick-active" data-slick-index="1" aria-hidden="false" tabindex="-1" role="tabpanel" id="slick-slide01" aria-describedby="slick-slide-control01" style="width: 730px;">
-                        <img class="img-fluid" src="/upload/slide/2023/07/06/slide-129121.jpg" alt="">
-                    </div>
-                    <div class="slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1" role="tabpanel" id="slick-slide02" aria-describedby="slick-slide-control02" style="width: 730px;">
-                        <img class="img-fluid" src="/upload/slide/2023/07/05/slide-969626.jpg" alt="">
-                    </div>
-                    <div class="slick-slide slick-cloned" data-slick-index="3" id="" aria-hidden="true" tabindex="-1" style="width: 730px;">
-                        <img class="img-fluid" src="/upload/slide/2023/07/06/slide-898382.jpg" alt="">
-                    </div>
-                    <div class="slick-slide slick-cloned" data-slick-index="4" id="" aria-hidden="true" tabindex="-1" style="width: 730px;">
-                        <img class="img-fluid" src="/upload/slide/2023/07/06/slide-129121.jpg" alt="">
-                    </div>
-                    <div class="slick-slide slick-cloned" data-slick-index="5" id="" aria-hidden="true" tabindex="-1" style="width: 730px;">
-                        <img class="img-fluid" src="/upload/slide/2023/07/05/slide-969626.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-                <ul class="slick-dots"  role="tablist">
-                    <li class="" role="presentation">
-                        <button type="button" role="tab" id="slick-slide-control00" aria-controls="slick-slide00" aria-label="1 of 3" tabindex="0" aria-selected="true">1</button>
-                    </li>
-                    <li role="presentation" class="slick-active">
-                        <button type="button" role="tab" id="slick-slide-control01" aria-controls="slick-slide01" aria-label="2 of 3" tabindex="-1">2</button>
-                    </li>
-                    <li role="presentation" class="">
-                    <button type="button" role="tab" id="slick-slide-control02" aria-controls="slick-slide02" aria-label="3 of 3" tabindex="-1">3</button>
-                    </li>
-                </ul>
-        </div>
-    </div>
     <div class="content content-full">
         <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
             <h1 class="flex-grow-1 fs-3 fw-semibold my-2 my-sm-3">Khóa Học</h1> 
         </div>
         <div class="row row-deck items-push">
+            <% let VND = new Intl.NumberFormat('vi-VN', {style: 'currency',currency: 'VND'}); %>
             <% for(var i = 0; i < sp_ar.length; i++) { %>
             <div class="col-md-6 col-xl-4">
                 
                 <a class="block block-link-shadow block-rounded text-center" href="/detail/<%= sp_ar[i].TenCourse %>">
                 <div class="d-flex align-items-center justify-content-between">
                     <div class="zz block-content-full ribbon ribbon-left ">
-                        <div style="color: rgb(4, 206, 158);font-weight: bold;font-size: 1.2rem;"><%= sp_ar[i].GiaCourse %>đ</div>
+                        <div style="color: rgb(4, 206, 158);font-weight: bold;font-size: 1.2rem;"><%= VND.format(sp_ar[i].GiaCourse)%></div>
                     </div>
                     <div class="zz block-content-full">
-                        <del><%= sp_ar[i].GiaGoc %>đ</del>
+                        <del><%= VND.format(sp_ar[i].GiaGoc)%></del>
                     </div>
                     <div class="zz block-content-full ribbon ribbon-right ribbon-danger">
-                    <div class="ribbon-box">67%</div>
+                    <div class="ribbon-box"><%= (sp_ar[i].GiaCourse/sp_ar[i].GiaGoc*100).toFixed(2) %>%</div>
                     </div>
                 </div>
                 <div class="block-content block-content-full block-rounded p-0">

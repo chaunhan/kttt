@@ -50,38 +50,40 @@ const edit = async function (req, res) {
 }
 
 const editpost = async (req,res) => {
-    const s = (req.body);
-    console.log("sdsad ",s);
-    try {
-        const a =  await reqWithdraw.findByIdAndUpdate(req.params.id,
-            s);
-        console.log("A",s);
-    res.redirect('/admin/lenh-rut-tien')
-    } catch (error) {
-        res.status(500).send(error);
-        console.log(error);
-    }
-}
+    const {isCheck, tienrut , email , tien} = (req.body);
 
-const editMoney = async (req,res) => {
-    const s = (req.body);
-    console.log("sdsad ",s);
-    if (s.isCheck == "true"){
-        const user = await User.findOne({email : s.email})
-
-        const UpdateTien = ({
-            tien: parseInt(s.tien1) - parseInt(s.tienrut1)
-        })
-        console.log(UpdateTien)
-        const b = await User.findByIdAndUpdate(user._id, UpdateTien)
+    const doiTrangThaiTrue = ({
+        isCheck: "true"
+    })
+    const doiTrangThaiHuy = ({
+        isCheck: "cancelled"
+    })
+    if (isCheck == doiTrangThaiHuy.isCheck) {
         try {
-            b
-            res.redirect("/admin/lenh-rut-tien")
-        }catch (e) {
-            console.log(e)
+            await reqWithdraw.findByIdAndUpdate(req.params.id,
+                doiTrangThaiHuy);
+        res.redirect('/admin/lenh-rut-tien')
+        } catch (error) {
+            res.status(500).send(error);
+            console.log(error);
         }
     }
+    if (isCheck == doiTrangThaiTrue.isCheck) {
+        try {
+            await reqWithdraw.findByIdAndUpdate(req.params.id,
+                doiTrangThaiTrue);
+            const user = await User.findOne({email : email})
     
+            const UpdateTien = ({
+                tien: parseInt(tien) - parseInt(tienrut)
+            })
+            await User.findByIdAndUpdate(user._id, UpdateTien)
+            res.redirect('/admin/lenh-rut-tien')
+        } catch (error) {
+            res.status(500).send(error);
+            console.log(error);
+        }
+    }
 }
 
 
@@ -129,6 +131,29 @@ const editTtMua = async (req,res) => {
             tien : f.tien + b.hoahong
         })
         h = await User.findByIdAndUpdate(f.id, UPDATEMONEY)
+        d = await User.findByIdAndUpdate(c._id,ActiveKhoaHoc);
+        e = await Cart.findByIdAndDelete(req.params.id)
+        res.redirect('/admin/lenh-mua-khoa-hoc')
+    } catch (error) {
+        res.status(500).send(error);
+        console.log(error);
+    }
+}
+
+const editTtMuaCancelled = async (req,res) => {
+    const doiTrangThai = ({
+        isCheck : "cancelled",
+    })
+    const a =  await reqMua.findByIdAndUpdate(req.params.id,doiTrangThai);
+    try {
+        a
+        console.log("Check Trạng Thái",doiTrangThai);
+        console.log("id" , req.params.id)
+        b = await reqMua.findById(req.params.id)
+        c = await User.findOne({email: b.email})
+        const ActiveKhoaHoc = ({
+            cDaMua : "",
+        })
         d = await User.findByIdAndUpdate(c._id,ActiveKhoaHoc);
         e = await Cart.findByIdAndDelete(req.params.id)
         res.redirect('/admin/lenh-mua-khoa-hoc')
@@ -210,9 +235,9 @@ module.exports = {
     withdrawCpanel,
     edit,
     editpost,
-    editMoney,
     checkMua,
     editTtMua,
+    editTtMuaCancelled,
     login,
     register,
     loginpage,

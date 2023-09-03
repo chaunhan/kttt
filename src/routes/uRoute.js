@@ -1,9 +1,10 @@
 var express = require('express');
 var umodel = require('../models/user');
 var login = require('../models/login');
+var authMiddleware = require('../middlewares/auth.middlewares')
 const router = express.Router();
 
-router.get("/user/edit/:id", async function (req, res) {
+router.get("/user/edit/:id", authMiddleware.Adminloggedin , async function (req, res) {
     console.log(req.params.id);
     await umodel.findById(req.params.id).then((user) => {
         if (user) {
@@ -14,8 +15,9 @@ router.get("/user/edit/:id", async function (req, res) {
         } else {
           console.log("loi");
         }
-      });
     });
+});
+
 router.post('/user/edit/:id', async (req,res) => {
     const s = (req.body);
     console.log("sdsad ",s);
@@ -31,7 +33,7 @@ router.post('/user/edit/:id', async (req,res) => {
     }
 });
 
-router.get("/user/delete/:id" , async (req,res) => {
+router.get("/user/delete/:id", authMiddleware.Adminloggedin , async (req,res) => {
     try {
         const u= await umodel.findByIdAndDelete(req.params.id, req.body)
         if(!u){

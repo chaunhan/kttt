@@ -8,6 +8,7 @@ const reqRutTien = new Schema({
     email: { type: String},
     ten: { type: String},
     tienrut: { type: Number},
+    tiengoc: { type: Number},
     bankName: {type: String},
     bankAcc: {type: String},
     bankNumber: {type: String},

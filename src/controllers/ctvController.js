@@ -43,7 +43,11 @@ const create = (req,res) => {
                         var tam =0;
                         tam = tam + 1;
                         TongDonHangTuyenDuoi = TongDonHangTuyenDuoi + tam;
-                        TongDoanhThu = user2[i].hoahong + TongDoanhThu;
+                        if( user2[i].isCheck == "true") {
+                            TongDoanhThu = user2[i].hoahong + TongDoanhThu;
+                        }else {
+                            TongDoanhThu = 0;
+                        }
                     }
                 }
 
@@ -86,8 +90,8 @@ const tradeHistory = async (req,res) => {
         reqMua.find({}).then((user1) => {
             var ListDonHangTuyenDuoi = [];
             for ( var i = 0; i < user1.length ; i++) {
-                if( user1[i].id == refinTong) {
-                    ListDonHangTuyenDuoi.push(user1[i])
+                if( user1[i].id == refinTong && user1[i].isCheck == "true") {
+                    ListDonHangTuyenDuoi.push(user1[i])   
                 }
             }
             console.log(ListDonHangTuyenDuoi, "USER TUYEN DUOI")
@@ -188,16 +192,18 @@ const xoaBank = async (req,res) => {
 const withdraw1 = async (req, res) => {
     const {phone_otp, amount} = req.body
     console.log(amount)
-    const tien = VND.format(req.session.user.tien)
+    const user = await User.findById(req.session.user._id)
+    const tien = VND.format(user.tien)
     console.log(tien)
 
     if (phone_otp && amount) {
-        if(emailOtp == phone_otp){
+        if(emailOtp == phone_otp && amount > 50000){
             await BankInfor.findOne({email: req.session.user.email }).then(async (bankI4) => {
                 const request = new reqWithdraw({
-                    ten: req.session.user.name,
-                    email: req.session.user.email,
+                    ten: user.name,
+                    email: user.email,
                     tienrut: amount,
+                    tiengoc: user.tien,
                     bankName: bankI4.bankName,
                     bankAcc: bankI4.account,
                     bankNumber: bankI4.number
@@ -213,7 +219,7 @@ const withdraw1 = async (req, res) => {
             })
         }else {
             await BankInfor.findOne({email: req.session.user.email }).then(async (bankI4) => {
-                const conflictError = 'OTP không hợp lệ.';
+                const conflictError = 'Số tiền muốn rút hoặc mã OTP không hợp lệ.';
                 res.render('./ctv/with-draw.ejs', {user: req.session.user, bankinfo: bankI4.toJSON() , conflictError , tien: tien});
             })
         }

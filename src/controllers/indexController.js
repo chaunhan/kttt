@@ -2,6 +2,11 @@ const cmodel = require("../models/course");
 const umodel = require("../models/user");
 const authMiddleware = require("../middlewares/auth.middlewares");
 
+let VND = new Intl.NumberFormat('vi-VN', {
+    style: 'currency',
+    currency: 'VND'
+});
+
 const home = async (req,res) => {
     const user = req.session.user;
     console.log(user)
@@ -15,7 +20,7 @@ const home = async (req,res) => {
 
 const userlist = async (req, res) => {
     umodel.find({}).then((user_ar) => {
-        res.render('./login/userlist.ejs' , {
+        res.render('./admin/userlist.ejs' , {
             user_ar : user_ar.map(s=>s.toJSON()),
         })
     });
