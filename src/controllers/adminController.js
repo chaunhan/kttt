@@ -6,6 +6,7 @@ const Cart = require('../models/cart')
 const Admin = require('../models/admin')
 const authMiddleware = require("../middlewares/auth.middlewares");
 const bcrypt = require('bcrypt');
+const course = require('../models/course');
 require('dotenv/config');
 
 
@@ -123,16 +124,25 @@ const editTtMua = async (req,res) => {
         b = await reqMua.findById(req.params.id)
         c = await User.findOne({email: b.email})
         f = await User.findById(b.id)
-        console.log(f.tien)
+        console.log ( f , "USER ")
+        g = await course.findOne({TenCourse : a.TenCourse})
         const ActiveKhoaHoc = ({
             cDaMua : "Học Làm Gà",
         })
-        const UPDATEMONEY = ({
-            tien : f.tien + b.hoahong
+        const UPDATELUOTMUA = ({
+            selled : g.selled + 1
         })
-        h = await User.findByIdAndUpdate(f.id, UPDATEMONEY)
+        i = await course.findByIdAndUpdate(g._id, UPDATELUOTMUA)
+        if( f === null ) {
+            console.log (" KO CÓ NGƯỜI GIỚI THIỆU")
+        } else {
+            const UPDATEMONEY = ({
+                tien : f.tien + b.hoahong
+            })
+            h = await User.findByIdAndUpdate(f.id, UPDATEMONEY)
+        }
         d = await User.findByIdAndUpdate(c._id,ActiveKhoaHoc);
-        e = await Cart.findByIdAndDelete(req.params.id)
+        e = await Cart.findOneAndDelete({id: req.params.id})
         res.redirect('/admin/lenh-mua-khoa-hoc')
     } catch (error) {
         res.status(500).send(error);

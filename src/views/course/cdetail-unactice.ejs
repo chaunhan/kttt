@@ -1,4 +1,4 @@
-<%- include('../layouts/header'); -%>
+<%- include('../layouts/headerlogin'); -%>
 
 <style>
     .click-zoom input[type=checkbox] {
@@ -36,7 +36,7 @@
                                     <div class="block-content block-content-full px-5 py-4">
                                         <div class="fs-sm fw-semibold text-uppercase text-white-50 ">Giá chỉ</div>
                                         <div class="fs-2 fw-semibold text-white mt-1 push">
-                                            <span style="color:#18ebdd;">297,000đ</span>
+                                            <span style="color:#18ebdd;"><%- tien %></span>
                                         </div>
                                         <span class="btn btn-hero btn-primary">
                                             <i class="fa fa-arrow-right opacity-50 me-1"></i> Đăng ký ngay
@@ -100,7 +100,7 @@
                     </div>
                     <div class="block-content border-bottom">
                         <h4 class="font-size-h5">Giải Pháp Kiếm Tiền Trên TikTok Thu Nhập Từ 20Triệu/Tháng</h4>
-                        <h5 class="font-size-h2 font-w300">297,000 đ</h5>
+                        <h5 class="font-size-h2 font-w300"><%- tien %></h5>
                         <hr>
                     </div>
                     <div class="block-content block-content-full">
@@ -164,7 +164,7 @@
                                      
                                         <tr class="table-active" style="border-bottom: 3px solid #fff;">
                                             <td class="text-center" style="width: 50px;"><i class="si si-folder-alt"></i></td>
-                                            <td><a class="prevent-downline" target="_blank" href="#">Bài 3: Xem một lượt cách kiếm tiền trên Tiktok ( phần 2 )</a></td>
+                                            <td><a class="prevent-downline" target="_blank" href="/lessons/bai3">Bài 3: Xem một lượt cách kiếm tiền trên Tiktok ( phần 2 )</a></td>
                                             <td class="font-size-sm text-end text-nowrap">
                                                  
                                             </td>
@@ -173,7 +173,7 @@
                                      
                                         <tr class="table-active" style="border-bottom: 3px solid #fff;">
                                             <td class="text-center" style="width: 50px;"><i class="si si-folder-alt"></i></td>
-                                            <td><a class="prevent-downline" target="_blank" href="#">Bài 4: Tạo tài khoản vàng kiếm 1000$ trên Tiktok</a></td>
+                                            <td><a class="prevent-downline" target="_blank" href="/lessons/bai4">Bài 4: Tạo tài khoản vàng kiếm 1000$ trên Tiktok</a></td>
                                             <td class="font-size-sm text-end text-nowrap">
                                                  
                                             </td>
@@ -182,7 +182,7 @@
                                      
                                         <tr class="table-active" style="border-bottom: 3px solid #fff;">
                                             <td class="text-center" style="width: 50px;"><i class="si si-folder-alt"></i></td>
-                                            <td><a class="prevent-downline" target="_blank" href="#">Bài 5:  Phương pháp thêm sản phẩm vào giỏ hàng trên Tiktok shop để người mới bắt đầu có hoa hồng</a></td>
+                                            <td><a class="prevent-downline" target="_blank" href="/lessons/bai5">Bài 5:  Phương pháp thêm sản phẩm vào giỏ hàng trên Tiktok shop để người mới bắt đầu có hoa hồng</a></td>
                                             <td class="font-size-sm text-end text-nowrap">
                                                  
                                             </td>
@@ -191,7 +191,7 @@
                                      
                                         <tr class="table-active" style="border-bottom: 3px solid #fff;">
                                             <td class="text-center" style="width: 50px;"><i class="si si-folder-alt"></i></td>
-                                            <td><a class="prevent-downline" target="_blank" href="#">Bài 6: Bí quyết kiếm 100 đơn mỗi ngày</a></td>
+                                            <td><a class="prevent-downline" target="_blank" href="/lessons/bai6">Bài 6: Bí quyết kiếm 100 đơn mỗi ngày</a></td>
                                             <td class="font-size-sm text-end text-nowrap">
                                                  
                                             </td>
@@ -200,7 +200,7 @@
                                      
                                         <tr class="table-active" style="border-bottom: 3px solid #fff;">
                                             <td class="text-center" style="width: 50px;"><i class="si si-folder-alt"></i></td>
-                                            <td><a class="prevent-downline" target="_blank" href="#">Bài 7: Tệp sản phẩm HOT x10 doanh thu của bạn mỗi ngày</a></td>
+                                            <td><a class="prevent-downline" target="_blank" href="/lessons/bai7">Bài 7: Tệp sản phẩm HOT x10 doanh thu của bạn mỗi ngày</a></td>
                                             <td class="font-size-sm text-end text-nowrap">
                                                  
                                             </td>
@@ -209,7 +209,7 @@
                                      
                                         <tr class="table-active" style="border-bottom: 3px solid #fff;">
                                             <td class="text-center" style="width: 50px;"><i class="si si-folder-alt"></i></td>
-                                            <td><a class="prevent-downline" target="_blank" href="#">Bài 8: Hướng dẫn làm video hàng chục hàng trăm ngàn view</a></td>
+                                            <td><a class="prevent-downline" target="_blank" href="/lessons/bai8">Bài 8: Hướng dẫn làm video hàng chục hàng trăm ngàn view</a></td>
                                             <td class="font-size-sm text-end text-nowrap">
                                                  
                                             </td>
@@ -218,7 +218,7 @@
                                      
                                         <tr class="table-active" style="border-bottom: 3px solid #fff;">
                                             <td class="text-center" style="width: 50px;"><i class="si si-folder-alt"></i></td>
-                                            <td><a class="prevent-downline" target="_blank" href="#">Bài 9: Cách thêm sản phẩm vào video dễ dàng nhất</a></td>
+                                            <td><a class="prevent-downline" target="_blank" href="/lessons/bai9">Bài 9: Cách thêm sản phẩm vào video dễ dàng nhất</a></td>
                                             <td class="font-size-sm text-end text-nowrap">
                                                  
                                             </td>
@@ -227,7 +227,7 @@
                                      
                                         <tr class="table-active" style="border-bottom: 3px solid #fff;">
                                             <td class="text-center" style="width: 50px;"><i class="si si-folder-alt"></i></td>
-                                            <td><a class="prevent-downline" target="_blank" href="#">Bài 10: Mẹo khắc phục lỗi nhỏ cho người mới</a></td>
+                                            <td><a class="prevent-downline" target="_blank" href="/lessons/bai10">Bài 10: Mẹo khắc phục lỗi nhỏ cho người mới</a></td>
                                             <td class="font-size-sm text-end text-nowrap">
                                                  
                                             </td>
@@ -236,7 +236,7 @@
                                      
                                         <tr class="table-active" style="border-bottom: 3px solid #fff;">
                                             <td class="text-center" style="width: 50px;"><i class="si si-folder-alt"></i></td>
-                                            <td><a class="prevent-downline" target="_blank" href="#">Bài 11: Cách rút tiền 30 giây về tài khoản</a></td>
+                                            <td><a class="prevent-downline" target="_blank" href="/lessons/bai11">Bài 11: Cách rút tiền 30 giây về tài khoản</a></td>
                                             <td class="font-size-sm text-end text-nowrap">
                                                  
                                             </td>
@@ -245,7 +245,7 @@
                                      
                                         <tr class="table-active" style="border-bottom: 3px solid #fff;">
                                             <td class="text-center" style="width: 50px;"><i class="si si-folder-alt"></i></td>
-                                            <td><a class="prevent-downline" target="_blank" href="#">Bài 12: Bạn vừa ném qua cửa 30 triệu nếu bỏ qua bài học này</a></td>
+                                            <td><a class="prevent-downline" target="_blank" href="/lessons/bai12">Bài 12: Bạn vừa ném qua cửa 30 triệu nếu bỏ qua bài học này</a></td>
                                             <td class="font-size-sm text-end text-nowrap">
                                                  
                                             </td>
@@ -254,7 +254,7 @@
                                      
                                         <tr class="table-active" style="border-bottom: 3px solid #fff;">
                                             <td class="text-center" style="width: 50px;"><i class="si si-folder-alt"></i></td>
-                                            <td><a class="prevent-downline" target="_blank" href="#">Bài 13: 4 bước làm một video review sản phẩm </a></td>
+                                            <td><a class="prevent-downline" target="_blank" href="/lessons/bai13">Bài 13: 4 bước làm một video review sản phẩm </a></td>
                                             <td class="font-size-sm text-end text-nowrap">
                                                  
                                             </td>

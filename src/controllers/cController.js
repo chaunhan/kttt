@@ -173,9 +173,11 @@ const baihoc = async (req, res) => {
 const baihocs = async (req, res) => {
     const tenbai = req.params.TenBai
     
-    await BaiHoc.findOne( {TenBai : tenbai}).then((baihoc) => {
+    await BaiHoc.findOne( {TenBai : tenbai}).then(async (baihoc) => {
         console.log(baihoc)
-        res.render('./course/baihocs.ejs', {user : req.session.user, baihoc : baihoc})
+        const course = await Course.findById(baihoc.ThuocKhoa)
+        console.log(course)
+        res.render('./course/baihocs.ejs', {user : req.session.user, baihoc : baihoc , course : course})
     })
     
 }

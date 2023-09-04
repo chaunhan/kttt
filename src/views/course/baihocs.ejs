@@ -12,28 +12,186 @@
     </div>
 
     <div class="content">
-                                                <div class="block">
-              <iframe width="100%" height="630" src="<%- baihoc.link %>" title="Bài 1: Người mới ngày kiếm được bao nhiêu tiền trên Tiktok?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+        <% if (user) { %>
+            <% if( user.cDaMua == "" && baihoc.TenBai != "bai2" && baihoc.TenBai != "bai1") { %>
+                <div class="bg-image" style="background-image: url('https://kiemtientictok.com/default/theme/assets/media/various/996772_m.jpg');">
+                    <div class="bg-black-op">
+                        <div class="content">
+                            <div class="py-5 nice-copy text-center">
+                                <h3 class="font-w700 mb-1">Bạn phải đăng ký mua khoá học để xem được nội dung này</h3>
+                                <form action="/addcart" method="post">
+                                    <div>
+                                        <input type="hidden" value="<%= course.TenCourse %>" name="TenCourse">
+                                        <input type="hidden" value="<%= course.GiaCourse %>" name="GiaCourse">
+                                    </div>
+                                    <button type="submit"class="btn btn-hero btn-noborder btn-primary btn-lg add_cart">Đăng Ký Ngay</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <% if(baihoc.pre == null)  { %>
+                            <div></div>
+                            <% } %>
+                        <% if(baihoc.pre != null)  { %>    
+                            <a class="btn btn-noborder btn-primary  btn-lg" href="/lessons/<%- baihoc.pre %>">
+                                Bài trước
+                            </a>
+                        <% } %>    
+                    </div>
+                    <div>
+                        <% if(baihoc.pre == null)  { %>
+                            <div></div>
+                            <% } %>
+                        <% if(baihoc.pre != null)  { %>    
+                            <a class="btn btn-noborder btn-primary  btn-lg" href="/lessons/<%- baihoc.next %>">Bài tiếp</a>	  
+                        <% } %>              
+                    </div>
+                </div>
+            <% } %>
+            <% if(baihoc.TenBai == "bai1") { %>
+            <div class="block">
+                <iframe width="100%" height="630" src="<%- baihoc.link %>" title="Bài 1: Người mới ngày kiếm được bao nhiêu tiền trên Tiktok?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
             </div>
-                                                <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between">
                 <div>
                     <% if(baihoc.pre == null)  { %>
                         <div></div>
                         <% } %>
-                    <% if(baihoc.pre != null)  { %>
-                            
-                    <a class="btn btn-noborder btn-primary  btn-lg" href="/lessons/<%- baihoc.pre %>">
-                        Bài trước
-                    </a>
+                    <% if(baihoc.pre != null)  { %>    
+                        <a class="btn btn-noborder btn-primary  btn-lg" href="/lessons/<%- baihoc.pre %>">
+                            Bài trước
+                        </a>
                     <% } %>    
                 </div>
                 <div>
-                                                        <a class="btn btn-noborder btn-primary  btn-lg" href="/lessons/bai2">
-                            Bài tiếp
-                        </a>	
-                        
+                    <% if(baihoc.next == null)  { %>
+                        <div></div>
+                        <% } %>
+                    <% if(baihoc.next != null)  { %>    
+                        <a class="btn btn-noborder btn-primary  btn-lg" href="/lessons/<%- baihoc.next %>">Bài tiếp</a>	  
+                    <% } %>              
                 </div>					
             </div>
+            <% } %>
+            <% if(baihoc.TenBai == "bai2") { %>
+                <div class="block">
+                    <iframe width="100%" height="630" src="<%- baihoc.link %>" title="Bài 1: Người mới ngày kiếm được bao nhiêu tiền trên Tiktok?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <% if(baihoc.pre == null)  { %>
+                            <div></div>
+                            <% } %>
+                        <% if(baihoc.pre != null)  { %>    
+                            <a class="btn btn-noborder btn-primary  btn-lg" href="/lessons/<%- baihoc.pre %>">
+                                Bài trước
+                            </a>
+                        <% } %>    
+                    </div>
+                    <div>
+                        <% if(baihoc.next == null)  { %>
+                            <div></div>
+                            <% } %>
+                        <% if(baihoc.next != null)  { %>    
+                            <a class="btn btn-noborder btn-primary  btn-lg" href="/lessons/<%- baihoc.next %>">Bài tiếp</a>	  
+                        <% } %>              
+                    </div>					
+                </div>
+                <% } %>
+        <% } %>
+        <% if (!user) { %>
+            <% if(baihoc.TenBai != "bai2" || baihoc.TenBai != "bai1") { %>
+                <div class="bg-image" style="background-image: url('https://kiemtientictok.com/default/theme/assets/media/various/996772_m.jpg');">
+                    <div class="bg-black-op">
+                        <div class="content">
+                            <div class="py-5 nice-copy text-center">
+                                <h3 class="font-w700 mb-1">Bạn phải đăng ký mua khoá học để xem được nội dung này</h3>
+                                <form action="/addcart" method="post">
+                                    <div>
+                                        <input type="hidden" value="<%= course.TenCourse %>" name="TenCourse">
+                                        <input type="hidden" value="<%= course.GiaCourse %>" name="GiaCourse">
+                                    </div>
+                                    <button type="submit"class="btn btn-hero btn-noborder btn-primary btn-lg add_cart">Đăng Ký Ngay</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <% if(baihoc.pre == null)  { %>
+                            <div></div>
+                            <% } %>
+                        <% if(baihoc.pre != null)  { %>    
+                            <a class="btn btn-noborder btn-primary  btn-lg" href="/lessons/<%- baihoc.pre %>">
+                                Bài trước
+                            </a>
+                        <% } %>    
+                    </div>
+                    <div>
+                        <% if(baihoc.pre == null)  { %>
+                            <div></div>
+                            <% } %>
+                        <% if(baihoc.pre != null)  { %>    
+                            <a class="btn btn-noborder btn-primary  btn-lg" href="/lessons/<%- baihoc.next %>">Bài tiếp</a>	  
+                        <% } %>              
+                    </div>
+                </div>
+            <% } %>
+            <% if(baihoc.TenBai == "bai1") { %>
+                <div class="block">
+                    <iframe width="100%" height="630" src="<%- baihoc.link %>" title="Bài 1: Người mới ngày kiếm được bao nhiêu tiền trên Tiktok?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <% if(baihoc.pre == null)  { %>
+                            <div></div>
+                            <% } %>
+                        <% if(baihoc.pre != null)  { %>    
+                            <a class="btn btn-noborder btn-primary  btn-lg" href="/lessons/<%- baihoc.pre %>">
+                                Bài trước
+                            </a>
+                        <% } %>    
+                    </div>
+                    <div>
+                        <% if(baihoc.next == null)  { %>
+                            <div></div>
+                            <% } %>
+                        <% if(baihoc.next != null)  { %>    
+                            <a class="btn btn-noborder btn-primary  btn-lg" href="/lessons/<%- baihoc.next %>">Bài tiếp</a>	  
+                        <% } %>              
+                    </div>					
+                </div>
+            <% } %>
+            <% if(baihoc.TenBai == "bai2") { %>
+                <div class="block">
+                    <iframe width="100%" height="630" src="<%- baihoc.link %>" title="Bài 1: Người mới ngày kiếm được bao nhiêu tiền trên Tiktok?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <% if(baihoc.pre == null)  { %>
+                            <div></div>
+                            <% } %>
+                        <% if(baihoc.pre != null)  { %>    
+                            <a class="btn btn-noborder btn-primary  btn-lg" href="/lessons/<%- baihoc.pre %>">
+                                Bài trước
+                            </a>
+                        <% } %>    
+                    </div>
+                    <div>
+                        <% if(baihoc.next == null)  { %>
+                            <div></div>
+                            <% } %>
+                        <% if(baihoc.next != null)  { %>    
+                            <a class="btn btn-noborder btn-primary  btn-lg" href="/lessons/<%- baihoc.next %>">Bài tiếp</a>	  
+                        <% } %>              
+                    </div>					
+                </div>
+            <% } %>
+        <% } %>
             <!-- Nội dung cho khóa học nếu có
                                         <div class="row">
                     <div class="col-md-8 offset-md-2">  
@@ -55,3 +213,5 @@
     </div>
     
 </main>
+
+<%- include('../layouts/footer') %>

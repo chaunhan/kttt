@@ -5,42 +5,45 @@
         <div class="block-content block-content-full">
             <h2>Thông tin chuyển khoản</h2>
           <span class="text">Ngân hàng thụ hưởng</span>
-          <div class="input-group mb-3">
+          <div class="input-group mb-3 copyClipboard">
           <input readonly="" type="text" class="form-control" value="VP Bank">
-          <button class="btn btn-outline-secondary copy-btn" type="button" id="button-addon2"><i class="far fa-file"></i></button>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary copy-btn copyClipboard" data-clipboard-text="KTTT<%- id %>" onclick="copyToClipboard(this)" type="button"><i class="far fa-file"></i></button>
+          </div>
         </div>
         <span class="text">Số tài khoản</span>
-        <div class="input-group mb-3">
+        <div class="input-group mb-3 copyClipboard">
           <input readonly="" type="text" class="form-control" value="9666886889">
-          <button class="btn btn-outline-secondary copy-btn" type="button" id="button-addon2"><i class="far fa-file"></i></button>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary copy-btn copyClipboard" data-clipboard-text="KTTT<%- id %>" onclick="copyToClipboard(this)" type="button"><i class="far fa-file"></i></button>
+          </div>
         </div>
         
         <span class="text">Chủ tài khoản</span>
-        <div class="input-group mb-3">
+        <div class="input-group mb-3 copyClipboard">
           <input readonly="" type="text" class="form-control" value="Nguyễn Quang Nam">
-          <button class="btn btn-outline-secondary copy-btn" type="button" id="button-addon2"><i class="far fa-file"></i></button>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary copy-btn copyClipboard" data-clipboard-text="KTTT<%- id %>" onclick="copyToClipboard(this)" type="button"><i class="far fa-file"></i></button>
+          </div>
         </div>
         
         <span class="text">Số tiền</span>
-        <div class="input-group mb-3">
-          <input readonly="" type="text" class="form-control" value="297,000 VNĐ">
-          <button class="btn btn-outline-secondary copy-btn" type="button" id="button-addon2"><i class="far fa-file"></i></button>
+        <div class="input-group mb-3 copyClipboard">
+          <input readonly="" type="text" class="form-control" value="300,000 VNĐ">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary copy-btn copyClipboard" data-clipboard-text="300000" onclick="copyToClipboard(this)" type="button"><i class="far fa-file"></i></button>
+          </div>
         </div>
         
         <span class="text">Nội dung</span>
-        <div class="input-group mb-3">
+        <div class="input-group mb-3 copyClipboard">
           <input readonly="" type="text" class="form-control" value="KTTT<%- id %>">
-          <button class="btn btn-outline-secondary copy-btn" type="button" id="button-addon2"><i class="far fa-file"></i></button>
-        </div>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary copy-btn copyClipboard" data-clipboard-text="KTTT<%- id %>" onclick="copyToClipboard(this)" type="button"><i class="far fa-file"></i></button>
+          </div>
         </div>
       </div>
-      
-      <!-- Cụm alert sẽ được hiển thị giữa màn hình -->
-        <div id="copyAlert" class="alert alert-success dark" role="alert">
-            <a href="#">Đã sao chép</a>
-        </div>
-        
-      <div class="col-lg-4">
+      <div class="col">
         <div class="block-content block-content-full mt-2">
           <div class="alert alert-warning">
             <h4 class="alert-heading">Lưu ý</h4>
@@ -50,4 +53,20 @@
       </div>
     </div>
 </main>
+      <!-- Cụm alert sẽ được hiển thị giữa màn hình -->
+      <div id="copyalertz" class="alert alert-success dark" role="alert">
+        <a href="#">Đã sao chép</a>
+    </div>
 <%- include('../layouts/footer'); -%>
+<script src="/js/popup-mess.js"></script>
+<style>
+		#copyalertz {
+				position: fixed;
+				left: 0;
+				right: 0;
+				display: none;
+				text-align: center;
+				max-width: 150px; /* Thay đổi kích thước tùy ý */
+				margin: 0 auto;
+			}
+</style>
