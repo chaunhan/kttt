@@ -1,0 +1,59 @@
+<%- include('../layouts/headerlogin') %>
+
+<main id="main-container">
+    <div class="bg-image" style="background-image: url('https://kiemtientictok.com/default/theme/assets/media/photos/lesson_detail.webp');">
+        <div class="bg-black-75">
+            <div class="content content-top content-full text-center">
+                <h1 class="fw-bold text-white mt-5 mb-3"> Kiemtientictok </h1>
+                 
+                <h2 class="h3 fw-normal text-white-75 mb-5"><a class="link-effect text-info" href="#">Giải Pháp Kiếm Tiền Trên TikTok Thu Nhập Từ 20Triệu/Tháng </a> • <%- baihoc.Title %></h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+                                                <div class="block">
+              <iframe width="100%" height="630" src="<%- baihoc.link %>" title="Bài 1: Người mới ngày kiếm được bao nhiêu tiền trên Tiktok?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+            </div>
+                                                <div class="d-flex justify-content-between">
+                <div>
+                    <% if(baihoc.pre == null)  { %>
+                        <div></div>
+                        <% } %>
+                    <% if(baihoc.pre != null)  { %>
+                            
+                    <a class="btn btn-noborder btn-primary  btn-lg" href="/lesson/<%- baihoc.pre %>">
+                        Bài trước
+                    </a>
+                    <% } %>
+                </div>
+                <div>
+                    <% if(baihoc.next == "")  { %>
+                        <div></div>
+                        <% } %>
+                    <% if(baihoc.next != "")  { %>
+                        <a class="btn btn-noborder btn-primary  btn-lg" href="/lesson/<%- baihoc.next %>">Bài tiếp</a>
+                    <% } %>
+                </div>					
+            </div>
+            <!-- Nội dung cho khóa học nếu có
+                                        <div class="row">
+                    <div class="col-md-8 offset-md-2">  
+                    <div class="block block-rounded">
+                    
+                            
+                        </div> 
+                            
+                        <div class="block block-rounded">
+                            <div class="block block-rounded">
+                                <div class="block-content pb-3">
+                                                                                </div>
+                            </div>
+                        </div>
+                            
+                    </div>
+                </div>   
+                                     -->
+    </div>
+    
+</main>

@@ -2,6 +2,7 @@ const authMiddleware = require("../middlewares/auth.middlewares");
 const Course = require('../models/course');
 const User = require('../models/user');
 const Cart = require('../models/cart');
+const BaiHoc = require('../models/baihoc')
 const ReqMua = require('../models/reqmua')
 
 const create = (req,res) => {
@@ -149,6 +150,35 @@ const guilenhMua = async (req,res) => {
         console.log(e)
     }
 }
+const addBaihoc = async (req,res) => {
+    const s = req.body
+    const a = await BaiHoc.create(s)
+    try {
+        a
+        res.send("ĐÃ THÊM")
+    }catch (e) {
+
+    }
+}
+
+const baihoc = async (req, res) => {
+    const tenbai = req.params.TenBai
+    await BaiHoc.findOne( {TenBai : tenbai}).then((baihoc) => {
+        console.log(baihoc)
+        res.render('./course/baihoc.ejs', {user : req.session.user, baihoc : baihoc})
+    })
+    
+}
+
+const baihocs = async (req, res) => {
+    const tenbai = req.params.TenBai
+    
+    await BaiHoc.findOne( {TenBai : tenbai}).then((baihoc) => {
+        console.log(baihoc)
+        res.render('./course/baihocs.ejs', {user : req.session.user, baihoc : baihoc})
+    })
+    
+}
 
 module.exports = {
     create,
@@ -160,5 +190,8 @@ module.exports = {
     courseDetail1,
     addcart,
     muaCoure,
-    guilenhMua
+    guilenhMua,
+    addBaihoc,
+    baihoc,
+    baihocs
 }
